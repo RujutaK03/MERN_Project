@@ -1,0 +1,143 @@
+.header{
+    background-color: black;
+    display: flex;
+    padding: 3px;
+}
+.header1{
+   position: sticky;
+   top:0;
+   z-index: 1000;
+}
+img{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+h1{
+    color: #66fcf1;
+}
+i{
+    color: #66fcf1;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin:5px;
+    font-size: x-large;
+    border: #66fcf1;
+}
+ button.signin{
+    margin-left: auto;
+    height: max-content;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 25px;
+    color: #66fcf1;
+    background-color: black;
+    border-radius: 40px;
+    display: flex;
+    border: 0;
+ }
+ .sign{
+    font-size: large;
+    margin-top: auto;
+    margin-bottom: auto;
+ }
+ .signin:hover{
+    background-color: #66fcf1;
+    color: black;
+    padding: 5px;
+    transition: 0.5s;
+ }
+ .signin:hover i{
+   color:black;
+   transition: 0.5s;
+}
+ .topnav{
+    background-color: #1f2833;
+    width: 100%;
+    display: flex;
+    padding: 0px;
+    position: sticky;
+    
+ }
+ a{
+    color: #66fcf1;
+    padding:10px;
+    font-size: larger;
+ }
+ .links:hover{
+    background-color: #66fcf1;
+    color: black;
+    transition: 0.5s;
+ }
+ input{
+    margin-left:auto;
+    margin-right: 8px;
+    margin-top:3px;
+    margin-bottom:3px;
+    height: 30px;
+    width:270px;
+    border-radius: 10px;
+    
+ }
+ .title{
+    color:#66fcf1;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: auto;
+    margin-bottom: auto;
+ }
+ .links{
+    text-decoration: none;
+    color: #66fcf1;
+ }
+ .search{
+    margin-left:auto;
+    margin-right: 8px;
+    margin-top:auto;
+    margin-bottom:auto;
+    height: 35px;
+    width:270px;
+    border-radius: 10px;
+ }
+ .text{
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+ }
+ .car{
+   height: 80vh;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  }
+  #carouselExample{
+   position: relative;
+  }
+  .services{
+   color: #66fcf1;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+  }
+ .service{
+   color: #66fcf1;
+ }
+ .servimg{
+   height: 120px;
+   width: 120px;
+   margin-right: auto;
+   margin-left: auto;
+ }
+ .card1{
+   width:250px;
+   height: 250px;
+ }
+ .foot1{
+   color: #66fcf1;
+ }
+ .footlinks{
+   text-decoration:none ;
+   color: #66fcf1;
+   font-size: medium;
+ }

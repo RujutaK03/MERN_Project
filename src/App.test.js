@@ -1,8 +1,17 @@
+// Importing necessary functions from @testing-library/react
 import { render, screen } from '@testing-library/react';
+
+// Importing the component to be tested
 import App from './App';
 
-test('renders learn react link', () => {
+// Writing the test
+test('renders World Of Cinema in the header', () => {
+  // Rendering the App component
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // Checking if the text "World Of Cinema" is present in the document
+  const headerElement = screen.getByText(/World Of Cinema/i);
+
+  // Asserting that the element is in the document
+  expect(headerElement).toBeInTheDocument();
 });
