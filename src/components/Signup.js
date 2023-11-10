@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from "./logo.png"
 const SignUp = () => {
     return (
+        
         <div className="container1">
             <img src={logo} alt="Movie Ticket Booking Logo" className="logo" />
             <div className="signup-box">
@@ -28,6 +29,7 @@ const SignUp = () => {
                 </div>
             </div>
         </div>
+    
     );
 }
 
