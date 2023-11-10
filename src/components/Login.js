@@ -4,7 +4,7 @@ import './styles.css'; // Assuming you have a styles.css file for your styles
 import logo from "./logo.png"
 const Login = () => {
   return (
-    <div className="container">
+    <div className="container1">
       <img src={logo} alt="Movie Ticket Booking Logo" className="logo" />
       <div className="login-box">
         <h2>Welcome to World of Cinema</h2>
