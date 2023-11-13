@@ -15,13 +15,19 @@ import icon1 from './icon1.jpg';
 import icon2 from './icon2.jpg';
 import icon3 from './icon3.jpg';
 import icon4 from './icon4.jpg';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from './header.js';
 import Footer from './footer.js';
-import Info from './Info.js'
+import Info from './Info.js';
+import MyModal from './MyModal.js';
 const Index = () => {
   const iconStyle = { color: '#66fcf1',padding:"5px" };
   const linkStyle = { textDecoration: 'none' };
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
 
   return (
     <div>
@@ -64,9 +70,13 @@ const Index = () => {
               <button class=" align-items-right hpbt rounded " onclick="/info">
                 View Info
               </button></Link>
-              <Link>
-              <button class="align-items-right hpbt rounded">Book Tickets</button>
+              <Link to="#">
+                <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                  Book Tickets
+                </button>
               </Link>
+              <MyModal showModal={showModal} handleClose={handleClose} />
+              
             </div>
           </div>
           </div>
@@ -80,9 +90,12 @@ const Index = () => {
                   <button class="align-items-right hpbt rounded" onclick="/info">
                     View Info
                   </button></Link>
-                  <Link>
-                    <button class="align-items-right hpbt rounded">Book Tickets</button>
+                  <Link to="#">
+                    <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                      Book Tickets
+                    </button>
                   </Link>
+                  <MyModal showModal={showModal} handleClose={handleClose} />
               </div>
             </div>
           </div>
@@ -98,9 +111,12 @@ const Index = () => {
                 <button class=" align-items-right hpbt rounded" onclick="/info">
                   View Info
                 </button></Link>
-                <Link>
-                  <button class="align-items-right hpbt rounded">Book Tickets</button>
-                  </Link>
+                <Link to="#">
+                  <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                    Book Tickets
+                  </button>
+                </Link>
+                <MyModal showModal={showModal} handleClose={handleClose} />
             </div>
           </div>
           </div>
@@ -114,9 +130,12 @@ const Index = () => {
                   <button class="align-items-right hpbt rounded" onclick="/info">
                     View Info
                   </button></Link>
-                  <Link>
-                    <button class="align-items-right hpbt rounded">Book Tickets</button>
-                    </Link>
+                  <Link to="#">
+                    <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                      Book Tickets
+                    </button>
+                  </Link>
+                  <MyModal showModal={showModal} handleClose={handleClose} />
               </div>
             </div>
           </div>
@@ -132,9 +151,12 @@ const Index = () => {
                 <button class=" align-items-right hpbt rounded" onclick="/info">
                   View Info
                 </button></Link>
-                <Link>
-                  <button class="align-items-right hpbt rounded">Book Tickets</button>
-                  </Link>
+                <Link to="#">
+                  <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                    Book Tickets
+                  </button>
+                </Link>
+                <MyModal showModal={showModal} handleClose={handleClose} />
             </div>
           </div>
           </div>
@@ -148,9 +170,12 @@ const Index = () => {
                   <button class="align-items-right hpbt rounded" onclick="/info">
                     View Info
                   </button></Link>
-                  <Link>
-                    <button class="align-items-right hpbt rounded">Book Tickets</button>
-                    </Link>
+                  <Link to="#">
+                    <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                      Book Tickets
+                    </button>
+                  </Link>
+                  <MyModal showModal={showModal} handleClose={handleClose} />
               </div>
             </div>
           </div>
@@ -166,9 +191,12 @@ const Index = () => {
                 <button class="m-2 align-items-right hpbt rounded" onclick="/info">
                   View Info
                 </button></Link>
-                <Link>
-                  <button class="align-items-right hpbt rounded">Book Tickets</button>
-                  </Link>
+                <Link to="#">
+                  <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                    Book Tickets
+                  </button>
+                </Link>
+                <MyModal showModal={showModal} handleClose={handleClose} />
             </div>
           </div>
           </div>
@@ -182,10 +210,13 @@ const Index = () => {
                   <button class=" align-items-right hpbt rounded" onclick="/info">
                     View Info
                   </button></Link>
-                  <Link>
-                    <button class="align-items-right hpbt rounded">Book Tickets</button>
-                    </Link>
-              </div>
+                  <Link to="#">
+                    <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                      Book Tickets
+                    </button>
+                  </Link>
+                  <MyModal showModal={showModal} handleClose={handleClose} />
+                </div>
             </div>
           </div>
         </div>
@@ -200,9 +231,12 @@ const Index = () => {
                 <button class="m-2 align-items-right hpbt rounded" onclick="/info">
                   View Info
                 </button></Link>
-                <Link>
-                  <button class="align-items-right hpbt rounded">Book Tickets</button>
-                  </Link>
+                <Link to="#">
+                  <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                    Book Tickets
+                  </button>
+                </Link>
+                <MyModal showModal={showModal} handleClose={handleClose} />
             </div>
           </div>
           </div>
@@ -216,9 +250,12 @@ const Index = () => {
                   <button class="m-2 align-items-right hpbt rounded p-2" onclick="/info">
                     View Info
                   </button></Link>
-                  <Link>
-                    <button class="align-items-right hpbt rounded">Book Tickets</button>
-                    </Link>
+                  <Link to="#">
+                    <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                      Book Tickets
+                    </button>
+                  </Link>
+                  <MyModal showModal={showModal} handleClose={handleClose} />
               </div>
             </div>
           </div>
