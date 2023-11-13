@@ -28,8 +28,11 @@ const Info = () => {
   const iconStyle = { color: '#66fcf1',padding:"5px" };
   const linkStyle = { textDecoration: 'none' };
   const [showModal, setShowModal] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
+  const handleShow1 = () => setShowModal1(true);
+  const handleClose1 = () => setShowModal1(false);
 
   return (
     <div class="bg-black">
@@ -49,8 +52,8 @@ const Info = () => {
                 <br />
                 <button class="hpbt my-2 rounded" onClick={handleShow}><h2 class="sign">Book Tickets</h2></button>&ensp;&ensp;
                 <MyModal showModal={showModal} handleClose={handleClose} />
-                <button class="hpbt my-2 rounded" onClick={handleShow}><h2 class="sign">View Ratings</h2></button>
-                <Ratings showModal={showModal} handleClose={handleClose} />
+                <button class="hpbt my-2 rounded" onClick={handleShow1}><h2 class="sign">View Ratings</h2></button>
+                <Ratings showModal={showModal1} handleClose={handleClose1} />
                 <br /><br />
                 <div class="row">
                     <div class="col-4">
