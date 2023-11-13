@@ -5,8 +5,11 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Index from './components/Index';
 import Info from './components/Info';
-import MyModal from './components/MyModal'
-import MoviePage from './components/moviespage'
+import MyModal from './components/MyModal';
+import MoviePage from './components/moviespage';
+import About from './components/about';
+import Contact from './components/contact';
+import Ratings from './components/ratings';
 // index.js or App.js
 //import { library } from '@fortawesome/fontawesome-svg-core';
 //import { faInstagram, faFacebook, faYoutube, faTwitter, faAppStore, faGooglePlay, faCcPaypal, faGooglePay, faApplePay, faAmazonPay, faPaypal } from '@fortawesome/free-brands-svg-icons';
@@ -26,7 +29,10 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/info" element={<Info />} />
           <Route path="/citydate" element={<MyModal />} />
+          <Route path="/ratings" element={<Ratings />} />
           <Route path="/movies" element={<MoviePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Index />} />
         </Routes>
       </div>
