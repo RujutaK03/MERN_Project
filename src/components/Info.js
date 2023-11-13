@@ -21,10 +21,14 @@ import icon4 from './icon4.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from './header.js';
 import Footer from './footer.js';
-
+import { useState } from 'react';
+import MyModal from './MyModal.js';
 const Info = () => {
   const iconStyle = { color: '#66fcf1',padding:"5px" };
   const linkStyle = { textDecoration: 'none' };
+  const [showModal, setShowModal] = useState(false);
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
 
   return (
     <div class="bg-black">
@@ -42,7 +46,8 @@ const Info = () => {
                 <h5 class="text-white">2hr 45min</h5>
                 <h5 class="text-white">Action, Thriller</h5>
                 <br />
-                <button class="hpbt my-2 rounded"><h2 class="sign">Book Tickets</h2></button>&ensp;&ensp;
+                <button class="hpbt my-2 rounded" onClick={handleShow}><h2 class="sign">Book Tickets</h2></button>&ensp;&ensp;
+                <MyModal showModal={showModal} handleClose={handleClose} />
                 <button class="hpbt my-2 rounded"><h2 class="sign">View Ratings</h2></button>
                 <br /><br />
                 <div class="row">
