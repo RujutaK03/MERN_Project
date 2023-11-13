@@ -14,6 +14,7 @@ import icon1 from './icon1.jpg';
 import icon2 from './icon2.jpg';
 import icon3 from './icon3.jpg';
 import icon4 from './icon4.jpg';
+import Movies from './movies.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = () => {
     const iconStyle = { color: '#66fcf1',padding:"5px" };
@@ -30,8 +31,8 @@ const Header = () => {
             </button>
           </header>
           <div className="topnav position-static">
-            <a href='#' className="links">Home</a>
-            <a  href='#' className="links">Movies</a>
+            <a href='/' className="links">Home</a>
+            <a  href="/movies" className="links">Movies</a>
             <a  href='#' className="links">Cinemas</a>
             
             <a href='#' className="links">About</a>
