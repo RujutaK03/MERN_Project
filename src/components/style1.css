@@ -46,6 +46,27 @@ i{
     padding: 5px;
     transition: 0.5s;
  }
+ .link{
+   color:#66fcf1;
+   text-decoration: none ;
+ }
+ .usericon{
+   margin: 5px;
+ }
+
+ .signin:hover+.link h2{
+   background-color: #66fcf1;
+   color: black;
+   padding: 5px;
+   transition: 0.5s;
+}
+.signin:hover .link h2.sign {
+   color: black;
+ }
+ 
+ .signin:hover .link FontAwesomeIcon{
+   color: black;
+ }
  .signin:hover i{
    color:black;
    transition: 0.5s;
@@ -88,6 +109,7 @@ i{
     text-decoration: none;
     color: #66fcf1;
  }
+ 
  .search{
     margin-left:auto;
     margin-right: 8px;
@@ -141,3 +163,27 @@ i{
    color: #66fcf1;
    font-size: medium;
  }
+ .centered{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   font-size: xxx-large;
+   font-family: 'Times New Roman', Times, serif;
+   transform: translate(-50%, -50%);
+}
+.mov{
+   color:#66fcf1
+}
+.hpbt{
+   background-color: #1f2833;
+}
+button.signin1{
+   
+   
+   color: black;
+   background-color:#66fcf1;
+   border-radius: 3px;
+
+   border: 0;
+   padding:10px;
+}
