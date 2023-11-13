@@ -15,6 +15,8 @@ import icon2 from './icon2.jpg';
 import icon3 from './icon3.jpg';
 import icon4 from './icon4.jpg';
 import Movies from './movies.js'
+import About from './about.js';
+import Contact from './contact.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = () => {
     const iconStyle = { color: '#66fcf1',padding:"5px" };
@@ -35,8 +37,8 @@ const Header = () => {
             <a  href="/movies" className="links">Movies</a>
             <a  href='#' className="links">Cinemas</a>
             
-            <a href='#' className="links">About</a>
-            <a  href='#' className="links">Contact Us</a>
+            <a href='/about' className="links">About</a>
+            <a  href='/contact' className="links">Contact Us</a>
             <input className="search" type="text" placeholder="Search movies, cinemas.." />
           </div>
         </div>
