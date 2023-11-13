@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Index from './components/Index';
 import Info from './components/Info';
-import CityDateModal from './components/citydate'
+
 // index.js or App.js
 //import { library } from '@fortawesome/fontawesome-svg-core';
 //import { faInstagram, faFacebook, faYoutube, faTwitter, faAppStore, faGooglePlay, faCcPaypal, faGooglePay, faApplePay, faAmazonPay, faPaypal } from '@fortawesome/free-brands-svg-icons';
