@@ -6,6 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import logo from './logo.jpg';
 import img1 from './img1.jpg';
 import img2 from './img2.jpg';
+import img4 from './img4.gif';
 import img3 from './img3.jpg';
 import icon1 from './icon1.jpg';
 import icon2 from './icon2.jpg';
@@ -40,7 +41,7 @@ const Footer = () => {
               </div>
             </div>
             <br />
-            <div className="row bg-black">
+            <div className="d-flex bg-black">
               <div className="col-3 p-5 foot1">
                 <p>
                   <strong>Contact</strong>
@@ -90,6 +91,7 @@ const Footer = () => {
               <div className="col-3 p-5 foot1">
                 <p>
                   <strong>&ensp;My Account</strong>
+                </p>
                   <p>
                     <a href="#" className="footlinks">
                       About
@@ -111,7 +113,7 @@ const Footer = () => {
                       Help
                     </a>
                   </p>
-                </p>
+                
               </div>
               <div className="col-3 p-5 foot1">
                 <p>
