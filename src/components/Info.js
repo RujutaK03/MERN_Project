@@ -23,6 +23,7 @@ import Header from './header.js';
 import Footer from './footer.js';
 import { useState } from 'react';
 import MyModal from './MyModal.js';
+import Ratings from './ratings.js'
 const Info = () => {
   const iconStyle = { color: '#66fcf1',padding:"5px" };
   const linkStyle = { textDecoration: 'none' };
@@ -48,7 +49,8 @@ const Info = () => {
                 <br />
                 <button class="hpbt my-2 rounded" onClick={handleShow}><h2 class="sign">Book Tickets</h2></button>&ensp;&ensp;
                 <MyModal showModal={showModal} handleClose={handleClose} />
-                <button class="hpbt my-2 rounded"><h2 class="sign">View Ratings</h2></button>
+                <button class="hpbt my-2 rounded" onClick={handleShow}><h2 class="sign">View Ratings</h2></button>
+                <Ratings showModal={showModal} handleClose={handleClose} />
                 <br /><br />
                 <div class="row">
                     <div class="col-4">
