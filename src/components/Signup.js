@@ -27,7 +27,7 @@ const SignUp = () => {
             password:data.password,
             cpassword:data.cpassword
         };
-        Axios.post("http://localhost:4000/userRoute/register",userData).then((response)=>{
+        Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/register",userData).then((response)=>{
             console.log("This is the response");
             console.log(response.data.message);
             if(response.data.status==200){
