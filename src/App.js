@@ -11,6 +11,10 @@ import About from './components/about';
 import Contact from './components/contact';
 import Ratings from './components/ratings';
 import AddMovie from './components/adminPages/addMovie';
+import AddShows from './components/adminPages/addShows';
+import AddTheatre from './components/adminPages/addTheatre';
+import DisplayMovie from './components/adminPages/displayMovie';
+import DisplayTheatre from './components/adminPages/displayTheatre';
 // index.js or App.js
 //import { library } from '@fortawesome/fontawesome-svg-core';
 //import { faInstagram, faFacebook, faYoutube, faTwitter, faAppStore, faGooglePlay, faCcPaypal, faGooglePay, faApplePay, faAmazonPay, faPaypal } from '@fortawesome/free-brands-svg-icons';
@@ -35,6 +39,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/AddMovie" element={<AddMovie />} />
+          <Route path="/AddShows" element={<AddShows />} />
+          <Route path="/AddTheatre" element={<AddTheatre />} />
+          <Route path="/DisplayMovie" element={<DisplayMovie />} />
+          <Route path="/DisplayTheatre" element={<DisplayTheatre />} />
           <Route path="/" element={<Index />} />
         </Routes>
       </div>
