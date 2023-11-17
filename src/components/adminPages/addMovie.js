@@ -45,12 +45,12 @@ const AddMovie = () => {
 
     const handleMultipleImages = (event) => {
         const { name } = event.target;
-        const file = event.target.files[0];
+        const files = event.target.files;
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: [
                 ...(prevFormData[[name]] || []),
-                file,
+                ...files,
             ]
         }));
     }
@@ -67,20 +67,6 @@ const AddMovie = () => {
             newMovie.append("releaseDate", formData.releaseDate);
             newMovie.append("moviePoster", formData.moviePoster);
             newMovie.append("duration", formData.duration);
-
-            // formData.cast.forEach((member, index) => {
-            //     newMovie.append(`cast[${index}]`, member);
-            //     if (formData.castImages[index]) {
-            //         newMovie.append(`castImages[${index}]`, formData.castImages[index]);
-            //     }
-            // });
-
-            // formData.director.forEach((member, index) => {
-            //     newMovie.append(`director[${index}]`, member);
-            //     if (formData.directorImages[index]) {
-            //         newMovie.append(`directorImages[${index}]`, formData.directorImages[index]);
-            //     }
-            // });
 
             formData.cast.forEach((member, index) => {
                 newMovie.append(`cast[${index}]`, member);
@@ -100,11 +86,7 @@ const AddMovie = () => {
                 newMovie.append(`languages[${index}]`, lang);
             });
 
-            // for (const pair of newMovie.entries()) {
-            //     console.log(pair[0] + ', ' + pair[1]);
-            // }
-
-            const response = await fetch('http://localhost:8080/add-movie', {
+            const response = await fetch('https://mern-project-deployment-1.onrender.com/add-movie', {
                 method: 'POST',
                 body: newMovie,
             });
