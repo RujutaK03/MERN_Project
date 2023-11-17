@@ -233,6 +233,208 @@ const Movies = () => {
                 </div>
               </div>
             </div>
+            <h2 class="text-center mov text-white bg-dark">UPCOMING MOVIES</h2>
+            <div class="d-flex justify-content-evenly">
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                <img src={img2} height="150px" width="120px"/>
+                <div>
+                  <h3 class="mov m-2">Batman Begins</h3>
+                  <h5 class="mov m-2 text-white">8.9/10</h5>
+                  <Link to="/info" class="link ">
+                  <button class=" align-items-right hpbt rounded " onclick="/info"disa >
+                    View Info
+                  </button></Link>
+                  <Link to="#">
+                    <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                      Book Tickets
+                    </button>
+                  </Link>
+                  <MyModal showModal={showModal} handleClose={handleClose} />
+                  
+                </div>
+              </div>
+              </div>
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                  <img src={img2} height="150px" width="120px"/>
+                  <div>
+                    <h3 class="mov m-2">Batman Begins</h3>
+                    <h5 class="mov m-2 text-white">8.9/10</h5>
+                    <Link to="/info" class="link">
+                      <button class="align-items-right hpbt rounded" onclick="/info">
+                        View Info
+                      </button></Link>
+                      <Link to="#">
+                        <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                          Book Tickets
+                        </button>
+                      </Link>
+                      <MyModal showModal={showModal} handleClose={handleClose} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                <img src={img2} height="150px" width="120px"/>
+                <div>
+                  <h3 class="mov m-2">Batman Begins</h3>
+                  <h5 class="mov m-2 text-white">8.9/10</h5>
+                  <Link to="/info" class="link">
+                    <button class=" align-items-right hpbt rounded" onclick="/info">
+                      View Info
+                    </button></Link>
+                    <Link to="#">
+                      <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                        Book Tickets
+                      </button>
+                    </Link>
+                    <MyModal showModal={showModal} handleClose={handleClose} />
+                </div>
+              </div>
+              </div>
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                  <img src={img2} height="150px" width="120px"/>
+                  <div>
+                    <h3 class="mov m-2">Batman Begins</h3>
+                    <h5 class="mov m-2 text-white">8.9/10</h5>
+                    <Link to="/info" class="link">
+                      <button class="align-items-right hpbt rounded" onclick="/info">
+                        View Info
+                      </button></Link>
+                      <Link to="#">
+                        <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                          Book Tickets
+                        </button>
+                      </Link>
+                      <MyModal showModal={showModal} handleClose={handleClose} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                <img src={img2} height="150px" width="120px"/>
+                <div>
+                  <h3 class="mov m-2">Batman Begins</h3>
+                  <h5 class="mov m-2 text-white">8.9/10</h5>
+                  <Link to="/info" class="link">
+                    <button class=" align-items-right hpbt rounded" onclick="/info">
+                      View Info
+                    </button></Link>
+                    <Link to="#">
+                      <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                        Book Tickets
+                      </button>
+                    </Link>
+                    <MyModal showModal={showModal} handleClose={handleClose} />
+                </div>
+              </div>
+              </div>
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                  <img src={img2} height="150px" width="120px"/>
+                  <div>
+                    <h3 class="mov m-2">Batman Begins</h3>
+                    <h5 class="mov m-2 text-white">8.9/10</h5>
+                    <Link to="/info" class="link">
+                      <button class="align-items-right hpbt rounded" onclick="/info">
+                        View Info
+                      </button></Link>
+                      <Link to="#">
+                        <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                          Book Tickets
+                        </button>
+                      </Link>
+                      <MyModal showModal={showModal} handleClose={handleClose} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                <img src={img2} height="150px" width="120px"/>
+                <div>
+                  <h3 class="mov m-2">Batman Begins</h3>
+                  <h5 class="mov m-2 text-white">8.9/10</h5>
+                  <Link to="/info" class="link">
+                    <button class="m-2 align-items-right hpbt rounded" onclick="/info">
+                      View Info
+                    </button></Link>
+                    <Link to="#">
+                      <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                        Book Tickets
+                      </button>
+                    </Link>
+                    <MyModal showModal={showModal} handleClose={handleClose} />
+                </div>
+              </div>
+              </div>
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                  <img src={img2} height="150px" width="120px"/>
+                  <div>
+                    <h3 class="mov m-2">Batman Begins</h3>
+                    <h5 class="mov m-2 text-white">8.9/10</h5>
+                    <Link to="/info" class="link">
+                      <button class=" align-items-right hpbt rounded" onclick="/info">
+                        View Info
+                      </button></Link>
+                      <Link to="#">
+                        <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                          Book Tickets
+                        </button>
+                      </Link>
+                      <MyModal showModal={showModal} handleClose={handleClose} />
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                <img src={img2} height="150px" width="120px"/>
+                <div>
+                  <h3 class="mov m-2">Batman Begins</h3>
+                  <h5 class="mov m-2 text-white">8.9/10</h5>
+                  <Link to="/info" class="link">
+                    <button class="m-2 align-items-right hpbt rounded" onclick="/info">
+                      View Info
+                    </button></Link>
+                    <Link to="#">
+                      <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                        Book Tickets
+                      </button>
+                    </Link>
+                    <MyModal showModal={showModal} handleClose={handleClose} />
+                </div>
+              </div>
+              </div>
+              <div class="card w-50 bg-black m-3">
+                <div class="d-flex">
+                  <img src={img2} height="150px" width="120px"/>
+                  <div>
+                    <h3 class="mov m-2">Batman Begins</h3>
+                    <h5 class="mov m-2 text-white">8.9/10</h5>
+                    <Link to="/info" class="link">
+                      <button class="m-2 align-items-right hpbt rounded p-2" onclick="/info">
+                        View Info
+                      </button></Link>
+                      <Link to="#">
+                        <button className="align-items-right hpbt rounded" onClick={handleShow} disabled>
+                          Book Tickets
+                        </button>
+                      </Link>
+                      <MyModal showModal={showModal} handleClose={handleClose} />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
     )}
 export default Movies;
