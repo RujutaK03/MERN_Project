@@ -187,3 +187,15 @@ button.signin1{
    border: 0;
    padding:10px;
 }
+.add{
+   background-color: #66fcf1;
+   color: black;
+}
+.add:hover{
+   background-color: blue;
+   color: white;
+}
+table.tab{
+   border-color: aliceblue;
+   border-width: 3px;
+}
