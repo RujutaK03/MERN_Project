@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../style1.css';
+import AdminHeader from './adminHeader';
+import Footer from '../footer';
 
 const AddShows = () => {
     const [movies, setMovies] = useState([]);
@@ -88,30 +93,46 @@ const AddShows = () => {
     };
 
     return (
-        <div>
-            <h1> Add Shows </h1>
+        <div class="bg-black">
+            <AdminHeader />
+            <div class="container my-3">
+            <h1 class="mov"> Add Shows </h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='movieId'> Select Movie : </label>
+                <table class="m-3"><tr >
+                    <th class="text-white p-3 ">
+                <label htmlFor='movieId'> Select Movie : </label></th>
+                <td>
                 <select id="movieId" name="movieId" value={formData.movieId} onChange={handleInputChange} required>
                     <option value=""> Select a movie </option>
                     {movies.map((movie) => (
                         <option key={movie._id} value={movie._id}> {movie.title} </option>
                     ))}
-                </select><br /><br />
-
-                <label htmlFor='theatreId'> Select Theatre : </label>
+                </select>
+            </td>
+            </tr>
+            <tr><th class="text-white p-3 ">
+                <label htmlFor='theatreId'> Select Theatre : </label></th>
+                <td>
                 <select id="theatreId" name="theatreId" value={formData.theatreId} onChange={handleInputChange} required>
                     <option value=""> Select a theatre </option>
                     {theatres.map((theatre) => (
                         <option key={theatre._id} value={theatre._id}> {theatre.name} </option>
                     ))}
-                </select><br /><br />
-
-                <label htmlFor='ticketPrice'> Price per Ticket : </label>
-                <input type='number' id='ticketPrice' name='ticketPrice' value={formData.ticketPrice} onChange={handleInputChange} required /><br /><br />
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <th class="text-white p-3 "><label htmlFor='ticketPrice'> Price per Ticket : </label></th>
+                <td><input type='number' id='ticketPrice' name='ticketPrice' value={formData.ticketPrice} onChange={handleInputChange} required />
+                </td>
+            </tr>
+                
                 {formData.showTimes.map((showTime, index) => (
-                    <div key={index}>
+                    <tr key={index}>
+                        <th class="text-white p-3 ">
                         <label htmlFor={`showTime${index + 1}`}>{`Show Time ${index + 1} :`}</label>
+                        </th>
+                        <td>
                         <input
                             type="time"
                             id={`showTime${index + 1}`}
@@ -120,18 +141,25 @@ const AddShows = () => {
                             onChange={(event) => handleShowTimeChange(index, event.target.value)}
                             required
                         />
-
                         {index > 0 && (
                             <button type="button" onClick={() => handleRemoveShowTime(index)}> Remove </button>
-                        )}
-                    </div>
+                        )}</td>
+                        
+                    
+                    </tr>
+                
                 ))}
+            
+            </table>
+                <button class="add rounded"  type="button" onClick={handleAddShowTime}> Add Show Time </button><br />
+                <br />
+                <button class="add rounded" type="submit"> Add Shows </button>
 
-                <button type="button" onClick={handleAddShowTime}> Add Show Time </button><br /><br />
-
-                <button type="submit"> Add Shows </button>
             </form>
         </div>
+        <Footer />
+        </div>
+        
     )
 
 }
