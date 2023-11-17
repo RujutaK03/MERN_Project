@@ -17,11 +17,11 @@ const AddShows = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8080/movies')
+        axios.get('https://mern-project-deployment-1.onrender.com/movies')
             .then(response => setMovies(response.data))
             .catch(error => console.error(error));
 
-        axios.get('http://localhost:8080/theatres')
+        axios.get('https://mern-project-deployment-1.onrender.com/theatres')
             .then(response => setTheatres(response.data))
             .catch(error => console.error(error));
     }, []);
@@ -77,7 +77,7 @@ const AddShows = () => {
                 console.log(pair[0] + ', ' + pair[1]);
             }
 
-            const response = await fetch('http://localhost:8080/add-shows', {
+            const response = await fetch('https://mern-project-deployment-1.onrender.com/add-shows', {
                 method: 'POST',
                 body: Shows,
             });
