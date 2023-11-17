@@ -10,7 +10,7 @@ const DisplayMovie = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/display-movie")
+        axios.get("https://mern-project-deployment-1.onrender.com/display-movie")
             .then((res) => {
                 setData(res.data);
             })
@@ -28,7 +28,7 @@ const DisplayMovie = () => {
 
             {data.map((movie, index) => (
                 <div key={index}>
-                    <img src={`http://localhost:8080/get-poster/${movie.moviePoster.filename}`}
+                    <img src={`${movie.moviePoster.cloudinaryURL}`}
                         alt={movie.title}
                         style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
@@ -51,7 +51,7 @@ const DisplayMovie = () => {
                     <h6 class="text-white"> Cast : </h6>
                     {movie.castImages.map((cast, id) => (
                         <div key={id}>
-                            <img src={`http://localhost:8080/get-cast/${cast.filename}`}
+                            <img src={`${cast.cloudinaryURL}`}
                                 alt={cast.name}
                                 style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
@@ -62,7 +62,7 @@ const DisplayMovie = () => {
                     <h6> Director : </h6>
                     {movie.directorImages.map((director, id) => (
                         <div key={id}>
-                            <img src={`http://localhost:8080/get-director/${director.filename}`}
+                            <img src={`${director.cloudinaryURL}`}
                                 alt={director.name}
                                 style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
