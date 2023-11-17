@@ -10,7 +10,7 @@ const DisplayTheatre = () => {
     const [theatres, setTheatres] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/display-theatre')
+        axios.get('https://mern-project-deployment-1.onrender.com/display-theatre')
             .then((response) => setTheatres(response.data))
             .catch((error) => console.error(error))
     }, []);
@@ -22,7 +22,7 @@ const DisplayTheatre = () => {
             <h1 class="mov"> All Theatres </h1>
             {theatres.map((theatre, index) => (
                 <div key={index}>
-                    <img src={`http://localhost:8080/get-theatre/${theatre.image.filename}`}
+                    <img src={`${theatre.image.cloudinaryURL}`}
                         alt={theatre.name}
                         style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
