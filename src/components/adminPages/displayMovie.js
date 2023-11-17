@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../style1.css';
+import AdminHeader from './adminHeader';
+import Footer from '../footer';
 
 const DisplayMovie = () => {
     const [data, setData] = useState([]);
@@ -16,8 +21,10 @@ const DisplayMovie = () => {
     console.log(data);
 
     return (
-        <>
-            <h1> Movie Posters </h1>
+        <div class="bg-black">
+            <AdminHeader />
+            <div class="container my-3">
+            <h1 class="mov"> Movie Posters </h1>
 
             {data.map((movie, index) => (
                 <div key={index}>
@@ -25,30 +32,30 @@ const DisplayMovie = () => {
                         alt={movie.title}
                         style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
-                    <h5> {movie.title} </h5>
-                    <p>{movie.description}</p>
-                    <h6>Release Date: {new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(movie.releaseDate))}</h6>
-                    <h6>Duration : {movie.duration.hours} hrs {movie.duration.minutes} mins </h6>
-                    <p> Genres: </p>
+                    <h5 class="text-white"> {movie.title} </h5>
+                    <p class="text-white">{movie.description}</p>
+                    <h6 class="text-white">Release Date: {new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(movie.releaseDate))}</h6>
+                    <h6 class="text-white">Duration : {movie.duration.hours} hrs {movie.duration.minutes} mins </h6>
+                    <p class="text-white"> Genres: </p>
 
                     {movie.genre.map((g, id) => (
-                        <div key={id}><p>{g}</p></div>
+                        <div key={id}><p class="text-white">{g}</p></div>
                     ))}
 
-                    <p> Languages : </p>
+                    <p class="text-white">  Languages : </p>
 
                     {movie.language.map((l, id) => (
-                        <div key={id}><p>{l}</p></div>
+                        <div key={id}><p class="text-white">{l}</p></div>
                     ))}
 
-                    <h6> Cast : </h6>
+                    <h6 class="text-white"> Cast : </h6>
                     {movie.castImages.map((cast, id) => (
                         <div key={id}>
                             <img src={`http://localhost:8080/get-cast/${cast.filename}`}
                                 alt={cast.name}
                                 style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
-                            <h5> {cast.name} </h5>
+                            <h5 class="text-white"> {cast.name} </h5>
                         </div>
                     ))}
 
@@ -59,14 +66,16 @@ const DisplayMovie = () => {
                                 alt={director.name}
                                 style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
 
-                            <h5> {director.name} </h5>
+                            <h5 class="text-white"> {director.name} </h5>
                         </div>
                     ))}
 
                 </div>
             ))}
-        </>
+        </div>
+            <Footer />
+            </div>
     );
 }
 
-export default DisplayMovie
+export default DisplayMovie;
