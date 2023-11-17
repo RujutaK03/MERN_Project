@@ -10,6 +10,7 @@ import MoviePage from './components/moviespage';
 import About from './components/about';
 import Contact from './components/contact';
 import Ratings from './components/ratings';
+import AddMovie from ./components/adminPages/addMovie;
 // index.js or App.js
 //import { library } from '@fortawesome/fontawesome-svg-core';
 //import { faInstagram, faFacebook, faYoutube, faTwitter, faAppStore, faGooglePlay, faCcPaypal, faGooglePay, faApplePay, faAmazonPay, faPaypal } from '@fortawesome/free-brands-svg-icons';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/movies" element={<MoviePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/AddMovie" element={<AddMovie />} />
           <Route path="/" element={<Index />} />
         </Routes>
       </div>
