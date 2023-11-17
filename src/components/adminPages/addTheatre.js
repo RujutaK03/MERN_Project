@@ -34,7 +34,7 @@ const AddTheatre = () => {
             newTheatre.append("image", formData.image);
             newTheatre.append("location", formData.location);
 
-            const response = await fetch('http://localhost:8080/add-theatre', {
+            const response = await fetch('https://mern-project-deployment-1.onrender.com/add-theatre', {
                 method: 'POST',
                 body: newTheatre,
             });
