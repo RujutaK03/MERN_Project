@@ -1,4 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../style1.css';
+import AdminHeader from './adminHeader';
+import Footer from '../footer';
 
 const AddTheatre = () => {
     const [formData, setFormData] = useState({
@@ -43,18 +50,40 @@ const AddTheatre = () => {
     }
 
     return (
-        <div>
-            <h1> Add a Theatre </h1>
+        <div class="bg-black">
+            <AdminHeader />
+            <div class="container my-3">
+            <h1 class="mov"> Add a Theatre </h1>
             <form onSubmit={handleSubmit}>
+            <table class="m-3">
+                <tr>
+                <th class="text-white p-3">
                 <label htmlFor='name'> Theatre Name : </label>
-                <input type='text' id='name' name='name' value={formData.name} onChange={handleInputChange} /><br /><br />
+                </th>
+                <td>
+                <input type='text' id='name' name='name' value={formData.name} onChange={handleInputChange} />
+                </td>
+                </tr>
+                <tr>
+                <th class="text-white p-3">
                 <label htmlFor='image'> Theatre Image : </label>
-                <input type='file' accpet='image/*' id='image' name='image' onChange={handleImageChange} /><br /><br />
+                </th>
+                <td>
+                <input type='file' accpet='image/*' id='image' name='image' onChange={handleImageChange} />
+                </td>
+            </tr><tr>
+                <th class="text-white p-3">
                 <label htmlFor='name'> Theatre Location : </label>
-                <input type='text' id='location' name='location' value={formData.location} onChange={handleInputChange} /><br /><br />
-
-                <button type='submit' onSubmit={handleSubmit}> Add Theatre </button>
+                </th>
+                <td>
+                <input type='text' id='location' name='location' value={formData.location} onChange={handleInputChange} />
+                </td>
+            </tr>
+            </table>
+                <button class="add rounded" type='submit' onSubmit={handleSubmit}><b> Add Theatre </b></button>
             </form>
+        </div>
+            <Footer />
         </div>
     )
 }
