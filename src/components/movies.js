@@ -14,7 +14,7 @@ const Movies = () => {
 
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/display-movie")
+    axios.get("https://mern-project-deployment-1.onrender.com/display-movie")
       .then((res) => {
         setData(res.data);
       })
