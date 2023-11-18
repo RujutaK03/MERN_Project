@@ -19,7 +19,7 @@ const ShowInfo = () => {
     const date = searchParams.get("date")
 
     useEffect(() => {
-        axios.get("http://localhost:8080/get-shows", {
+        axios.get("https://mern-project-deployment-1.onrender.com/get-shows", {
             params: { movieId: movieId, theatreId: theatreId }
         })
             .then((res) => {
