@@ -12,7 +12,7 @@ const MyModal = ({ showModal, handleClose, movieId }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/get-cities")
+    axios.get("https://mern-project-deployment-1.onrender.com/get-cities")
       .then((res) => {
         setCities(res.data);
       })
