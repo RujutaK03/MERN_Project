@@ -34,7 +34,7 @@ const Info = () => {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/get-movie-info/${movieId}`)
+        axios.get(`https://mern-project-deployment-1.onrender.com/get-movie-info/${movieId}`)
             .then((res) => {
                 console.log(res);
                 if (res.status === 200) {
