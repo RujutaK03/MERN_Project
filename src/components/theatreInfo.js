@@ -20,7 +20,7 @@ const TheatreInfo = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:8080/get-theatre-by-location', {
+        axios.get('https://mern-project-deployment-1.onrender.com/get-theatre-by-location', {
             params: { city: city }
         })
             .then((response) => { setTheatres(response.data); console.log(theatres); })
