@@ -1,22 +1,28 @@
 // MyModal.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const MyModal = ({ showModal, handleClose }) => {
+const MyModal = ({ showModal, handleClose, movieId }) => {
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
+  const [citiesInIndia, setCities] = useState([]);
+  const navigate = useNavigate();
 
-  const citiesInIndia = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad', 'Ahmedabad', 'Pune', 'Jaipur', 'Lucknow'];
+  useEffect(() => {
+    axios.get("http://localhost:8080/get-cities")
+      .then((res) => {
+        setCities(res.data);
+      })
+      .catch((err) => { console.log(err); })
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform actions with the city and date values here
-    // For example, you may want to send a request to your server
-    console.log('City:', city);
-    console.log('Date:', date);
-    // Close the modal after handling the submission
     handleClose();
+    navigate(`/theatres?movieId=${movieId}&city=${city}&date=${date}`);
   };
 
   return (
