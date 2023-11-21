@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link,useHistory } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './styles.css'; // Assuming you have a styles.css file for your styles
 import logo from "./logo.png";
 import Axios from "axios";
@@ -28,7 +28,8 @@ const Login = () => {
           console.log("This is the response");
           console.log(response.data.message);
           if(response.data.status==200){
-            history.push('/');
+            const path ="/"; // Replace this with your desired path
+    window.location.href = path
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
               document.getElementById("userexists").innerHTML="";
             
