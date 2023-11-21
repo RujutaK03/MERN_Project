@@ -38,25 +38,26 @@ const ShowInfo = () => {
     return (
         <div class="bg-black">
             <Header />
-
+            <h1 class="mov container my-3">Available Shows</h1>
             {data ? (
                 <>
                     {shows.map((show, idx) => (
                         <div key={idx} class="my-3 container">
                             <h5 class="text-white"> Ticket Price Per Person : Rs. {show.ticketPrice} </h5>
+                            <div class="d-flex">
                             {
                                 show.showTimes.map((showTime, index) => (
-                                    <div key={index}>
-                                        <h6 class="text-white">{showTime}</h6>
+                                    <div key={index} >
+                                        <Link to="/Seat"><button class="border mar my-2 rounded"><b>{showTime}</b></button></Link>
                                     </div>
                                 ))
                             }
                         </div>
+                        </div>
                     ))}
                 </>
             ) : (<p class="text-white m-2 h2 text-center"> No Shows Available </p>)}
-
-            <Footer />
+                        <Footer />
         </div>
 
     )
