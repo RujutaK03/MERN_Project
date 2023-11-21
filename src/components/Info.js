@@ -79,7 +79,7 @@ const Info = () => {
             <div class="d-flex">
             {data.language.map((l, index) => (
               <h5 key={index} className="text-white">
-                {l}
+                {l}&ensp;&ensp;
               </h5>
             ))}
             </div>
