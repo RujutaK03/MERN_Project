@@ -199,3 +199,17 @@ table.tab{
    border-color: aliceblue;
    border-width: 3px;
 }
+.card2{
+   width: 550px;
+}
+.card3{
+   margin-right: 20px;
+}
+.movimg2{
+   height: 200px;
+   width: 150px;
+}
+.theatreimg{
+   height: 300px;
+   width: 300px;
+}
