@@ -17,6 +17,7 @@ import DisplayMovie from './components/adminPages/displayMovie';
 import DisplayTheatre from './components/adminPages/displayTheatre';
 import TheatreInfo from './components/theatreInfo';
 import ShowInfo from './components/showsInfo';
+import MovieSeatSelection from './components/seating';
 import AdminLogin from'./components/adminPages/AdminLogin';
 // index.js or App.js
 //import { library } from '@fortawesome/fontawesome-svg-core';
@@ -49,6 +50,7 @@ function App() {
           <Route path="/DisplayMovie" element={<DisplayMovie />} />
           <Route path="/DisplayTheatre" element={<DisplayTheatre />} />
           <Route path="/admin-login" element={<AdminLogin/>}/>
+          <Route path="/Seat" element={<MovieSeatSelection />} />
           <Route path="/" element={<Index />} />
         </Routes>
       </div>
