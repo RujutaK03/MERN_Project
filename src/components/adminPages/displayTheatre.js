@@ -19,20 +19,23 @@ const DisplayTheatre = () => {
         <div class="bg-black">
             <AdminHeader />
             <div class="container my-3">
-            <h1 class="mov"> All Theatres </h1>
+            <h1 class="mov m-4"> All Theatres </h1>
+            <div class="d-flex flex-wrap ">
             {theatres.map((theatre, index) => (
-                <div key={index}>
+                <div key={index} class="m-4">
                     <img src={`${theatre.image.cloudinaryURL}`}
                         alt={theatre.name}
-                        style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
+                        class="theatreimg rounded"/>
 
                     <h5 class="text-white"> {theatre.name} </h5>
                     <h5 class="text-white"> Location : {theatre.location} </h5>
                 </div>
             ))}
+        </div>
             </div>
             <Footer />
         </div>
+
     )
 }
 
