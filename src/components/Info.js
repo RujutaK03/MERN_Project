@@ -48,70 +48,103 @@ const Info = () => {
 
     return (
         <div className="bg-black">
-            <Header />
-            {data ? (
-                <div className="row">
-                    <div className="col-6 p-5">
-                        <img src={`${data.moviePoster.cloudinaryURL}`} alt={data.title} height="550px" width="450px" className="rounded-5" />
-                    </div>
-                    <div className="col-6 text-white p-5">
-                        <h1 className="mov">{data.title}</h1>
-                        <br />
-                        <p className="text-white align-content-between">{data.description}</p>
-                        <h5 className="text-white">{data.duration.hours} hrs {data.duration.minutes} mins</h5>
-
-                        {data.genre.map((g, index) => (
-                            <h5 key={index} className="text-white">{g}</h5>
-                        ))}
-
-                        {data.language.map((l, index) => (
-                            <h5 key={index} className="text-white">{l}</h5>
-                        ))}
-                        <br />
-
-                        <button className="hpbt my-2 rounded" onClick={handleShow}><h2 className="sign">Book Tickets</h2></button>&ensp;&ensp;
-                        <MyModal showModal={showModal} handleClose={handleClose} movieId={movieId} />
-                        <button className="hpbt my-2 rounded" onClick={handleShow1}><h2 className="sign">View Ratings</h2></button>
-                        <Ratings showModal={showModal1} handleClose={handleClose1} />
-                        <br /><br />
-
-                        <div className="row">
-                            <h3 className="text-white">Director</h3>
-                            <div className="col-8">
-                                <div className="card bg-black">
-                                    <div className="row">
-                                        {data.directorImages.map((director, index) => (
-                                            <div key={index} className="col-6">
-                                                <img src={`${director.cloudinaryURL}`} height="150px" width="120px" />
-                                                <h6 className="py-2 text-white">{director.name}</h6>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+      <Header />
+      {data ? (
+        <div className="row p-5">
+          <div className="col-6 ">
+            <img
+              src={`${data.moviePoster.cloudinaryURL}`}
+              alt={data.title}
+              height="550px"
+              width="450px"
+              className="rounded-5"
+            />
+          </div>
+          <div className="col-6 text-white ">
+            <h1 className="mov">{data.title}</h1>
+            <br />
+            <p className="text-white align-content-between">
+              {data.description}
+            </p>
+            <h5 className="text-white">
+              {data.duration.hours} hrs {data.duration.minutes} mins
+            </h5>
+            <div class="d-flex">
+              {data.genre.map((g, index) => (
+                <h5 key={index} className="text-white">
+                  {g}&ensp;
+                </h5>
+              ))}
+            </div>
+            {data.language.map((l, index) => (
+              <h5 key={index} className="text-white">
+                {l}
+              </h5>
+            ))}
+            <br />
+            <button className="hpbt my-2 rounded" onClick={handleShow}>
+              <h2 className="sign">Book Tickets</h2>
+            </button>
+            &ensp;&ensp;
+            <MyModal
+              showModal={showModal}
+              handleClose={handleClose}
+              movieId={movieId}
+            />
+            <button className="hpbt my-2 rounded" onClick={handleShow1}>
+              <h2 className="sign">View Ratings</h2>
+            </button>
+            <Ratings showModal={showModal1} handleClose={handleClose1} />
+            <br />
+            <br />
+            <div className="d-flex"> {/* Add this container */}
+                <div class="card3">
+                  <h3 className="text-white">Director</h3>
+                  <div className="card bg-black mr-3">
+                    <div className="row">
+                      {data.directorImages.map((director, index) => (
+                        <div key={index} className="col-12">
+                          <img
+                            src={`${director.cloudinaryURL}`}
+                            height="150px"
+                            width="120px"
+                            class="rounded"
+                          />
+                          <h6 className="py-2 text-white">{director.name}</h6>
                         </div>
-
-                        <div className="row">
-                            <div className="col-8">
-                                <div className="card bg-black">
-                                    <h3 className="text-white">Starring</h3>
-                                    <div className="row">
-                                        {data.castImages.map((cast, index) => (
-                                            <div key={index} className="col-6">
-                                                <img src={`${cast.cloudinaryURL}`} height="150px" width="120px" />
-                                                <h6 className="py-2 text-white">{cast.name}</h6>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      ))}
                     </div>
-                </div>) : (<p> Loading ... </p>)
-            }
+                  </div>
+                </div>
+  
+                <div className="ml-3"> {/* Add some margin to separate director and starring */}
+                  <div className="card bg-black">
+                    <h3 className="text-white mx-3">Starring</h3>
+                    <div className="d-flex">
+                      {data.castImages.map((cast, index) => (
+                        <div key={index} class="mx-3" >
+                          <img
+                            src={`${cast.cloudinaryURL}`}
+                            height="150px"
+                            width="120px"
+                            class="rounded"
+                          />
+                          <h6 className="py-2 text-white">{cast.name}</h6>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      ) : (
+        <p> Loading ... </p>
+      )}
 
-            <Footer />
-        </div >
+      <Footer />
+    </div>
+
     )
 }
 
