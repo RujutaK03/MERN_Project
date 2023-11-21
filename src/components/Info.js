@@ -76,11 +76,13 @@ const Info = () => {
                 </h5>
               ))}
             </div>
+            <div class="d-flex">
             {data.language.map((l, index) => (
               <h5 key={index} className="text-white">
                 {l}
               </h5>
             ))}
+            </div>
             <br />
             <button className="hpbt my-2 rounded" onClick={handleShow}>
               <h2 className="sign">Book Tickets</h2>
