@@ -50,7 +50,7 @@ const TheatreInfo = () => {
             </div>
             <Footer />
         </div>
-
+    )
 }
 
 export default TheatreInfo;
