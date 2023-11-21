@@ -36,7 +36,7 @@ const ShowInfo = () => {
     }, [movieId, theatreId]);
 
     return (
-        <div class="bg-black">
+       <div class="bg-black">
             <Header />
             <h1 class="mov container my-3">Available Shows</h1>
             {data ? (
