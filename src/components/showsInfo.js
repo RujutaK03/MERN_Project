@@ -42,7 +42,7 @@ const ShowInfo = () => {
             {data ? (
                 <>
                     {shows.map((show, idx) => (
-                        <div key={idx}>
+                        <div key={idx} class="my-3 container">
                             <h5 class="text-white"> Ticket Price Per Person : Rs. {show.ticketPrice} </h5>
                             {
                                 show.showTimes.map((showTime, index) => (
