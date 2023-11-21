@@ -28,9 +28,10 @@ const Login = () => {
           console.log("This is the response");
           console.log(response.data.message);
           if(response.data.status==200){
+            history.push('/');
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
               document.getElementById("userexists").innerHTML="";
-            history.push('/');
+            
           }
           else{
               document.getElementById("userexists").innerHTML=response.data.message;
