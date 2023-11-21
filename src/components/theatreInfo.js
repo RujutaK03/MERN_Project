@@ -37,7 +37,7 @@ const TheatreInfo = () => {
             <div class="container my-3">
                 <h1 class="mov"> Theatres in {city} </h1>
                 {theatres.map((theatre, index) => (
-                    <div key={index} onClick={() => handleClick(movieId, theatre._id, date)}>
+                    <div key={index} class="theatre rounded" onClick={() => handleClick(movieId, theatre._id, date)} class="theatre">
                         <img src={`${theatre.image.cloudinaryURL}`}
                             alt={theatre.name}
                             style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} 
@@ -49,7 +49,8 @@ const TheatreInfo = () => {
                 ))}
             </div>
             <Footer />
-        </div>    )
+        </div>
+
 }
 
 export default TheatreInfo;
