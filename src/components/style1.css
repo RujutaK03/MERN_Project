@@ -213,3 +213,56 @@ table.tab{
    height: 300px;
    width: 300px;
 }
+.mar{
+   margin-right: 30px;
+   border-width: 5px;
+   border-color: #66fcf1;
+   background-color: #1f2833;
+   color: #66fcf1;
+
+}
+.mar:hover{
+   background-color: aqua;
+   color: black;
+}
+.seat{
+   width: 50px;
+      height: 50px;
+      background-color: #1f2833;
+      color: #66fcf1;
+      border-color: #66fcf1;
+      cursor: pointer;
+      margin:3px;
+    
+}
+.container3,.container4{
+   width:300px;
+   margin: 10px;
+   display: flex;
+   flex-wrap: wrap;
+}
+.seatc{
+   margin-left: auto;
+   margin-right: auto;
+}
+.screen{
+   border-width: 1px;
+   border-color: #66fcf1;
+}
+.payment{
+   background-color: #66fcf1;
+   color: black;
+}
+.payment:hover{
+   color: white;
+}
+.theatre{
+   background-color: black;
+   width: fit-content;
+   padding:10px;
+   border-radius: 10px;
+}
+.theatre:hover{
+   background-color: #1f2833;
+   transition-duration: 0.3s;
+}
