@@ -21,60 +21,79 @@ const DisplayMovie = () => {
     console.log(data);
 
     return (
-        <div class="bg-black">
+       <div class="bg-black">
             <AdminHeader />
             <div class="container my-3">
-            <h1 class="mov"> Movie Posters </h1>
+            <h1 class="mov m-3"> Movie Posters </h1>
 
             {data.map((movie, index) => (
                 <div key={index}>
-                    <img src={`${movie.moviePoster.cloudinaryURL}`}
+                    <h4 class="text-white m-3"> {movie.title} </h4>
+                    <div class="d-flex">
+                    <div class="mx-3"><img src={`${movie.moviePoster.cloudinaryURL}`}
                         alt={movie.title}
-                        style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
-
-                    <h5 class="text-white"> {movie.title} </h5>
+                        style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} class="rounded"/>
+                    </div>
+                    
+                    <div>
+                    
                     <p class="text-white">{movie.description}</p>
                     <h6 class="text-white">Release Date: {new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(movie.releaseDate))}</h6>
                     <h6 class="text-white">Duration : {movie.duration.hours} hrs {movie.duration.minutes} mins </h6>
+                    
                     <p class="text-white"> Genres: </p>
-
+                    
+                    <div class="d-flex">
                     {movie.genre.map((g, id) => (
-                        <div key={id}><p class="text-white">{g}</p></div>
+                        <div key={id}><p class="text-white">{g}&ensp;&ensp;</p></div>
                     ))}
+                    </div>
 
                     <p class="text-white">  Languages : </p>
-
+                    <div class="d-flex">
                     {movie.language.map((l, id) => (
-                        <div key={id}><p class="text-white">{l}</p></div>
+                        <div key={id}><p class="text-white">{l}&ensp;&ensp;</p></div>
                     ))}
-
-                    <h6 class="text-white"> Cast : </h6>
+                    </div>
+                </div>
+                </div>
+                    <div class="d-flex">
+                    <div>
+                    <h6 class="text-white mx-3"> Cast : </h6>
+                    <div class="d-flex justify-content-evenly">
                     {movie.castImages.map((cast, id) => (
-                        <div key={id}>
+                        <div key={id} class="mx-3">
                             <img src={`${cast.cloudinaryURL}`}
                                 alt={cast.name}
-                                style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
+                                class="movimg2 rounded" />
 
-                            <h5 class="text-white"> {cast.name} </h5>
+                            <h6 class="text-white"> {cast.name} </h6>
                         </div>
                     ))}
-
-                    <h6> Director : </h6>
+                </div>
+                </div>
+                    <div>
+                    <h6 class="mx-3 text-white"> Director : </h6>
+                    <div class="d-flex">
                     {movie.directorImages.map((director, id) => (
-                        <div key={id}>
+                        <div key={id} class="mx-3">
                             <img src={`${director.cloudinaryURL}`}
                                 alt={director.name}
-                                style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
+                                class="movimg2 rounded" />
 
-                            <h5 class="text-white"> {director.name} </h5>
+                            <h6 class="text-white"> {director.name} </h6>
                         </div>
                     ))}
-
                 </div>
+                    </div>
+                </div>
+            </div>
+                
             ))}
         </div>
             <Footer />
             </div>
+ 
     );
 }
 
