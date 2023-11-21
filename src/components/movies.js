@@ -23,12 +23,15 @@ const Movies = () => {
 
   return (
     <div className="bg-dark pt-3 px-3">
-      <h2 className="text-center mov text-white bg-dark">NOW SHOWING</h2>
+      <h2 className="text-center mov text-white bg-dark ">NOW SHOWING</h2>
+      
+      <div className="d-flex flex-wrap justify-content-evenly" >
+        
       {data.map((movie, index) => (
-        <div className="d-flex justify-content-evenly" key={index}>
-          <div className="card w-50 bg-black m-3">
-            <div className="d-flex">
-              <img src={`${movie.moviePoster.cloudinaryURL}`} alt={movie.title} height="150px" width="120px" />
+        
+          <div className="card card2 bg-black m-3" key={index}>
+            <div className="d-flex ">
+              <img src={`${movie.moviePoster.cloudinaryURL}`} alt={movie.title} height="150px" width="120px" class="rounded" />
               <div>
                 <h3 className="mov m-2">{movie.title}</h3>
                 <h5 className="mov m-2 text-white"> {movie.duration.hours} hrs {movie.duration.minutes} mins </h5>
@@ -46,10 +49,14 @@ const Movies = () => {
               </div>
             </div>
           </div>
-        </div>
+       
       ))
       }
+      
     </div>
+  
+    </div>
+
   )
 }
 export default Movies;
