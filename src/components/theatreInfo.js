@@ -40,15 +40,16 @@ const TheatreInfo = () => {
                     <div key={index} onClick={() => handleClick(movieId, theatre._id, date)}>
                         <img src={`${theatre.image.cloudinaryURL}`}
                             alt={theatre.name}
-                            style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} />
+                            style={{ 'maxWidth': '300px', 'maxHeight': '300px' }} 
+                            class="m-2 rounded"
+                            />
 
-                        <h5 class="text-white"> {theatre.name} </h5>
+                        <h5 class="text-white m-2"> {theatre.name} </h5>
                     </div>
                 ))}
             </div>
             <Footer />
-        </div>
-    )
+        </div>    )
 }
 
 export default TheatreInfo;
