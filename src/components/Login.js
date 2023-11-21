@@ -6,7 +6,7 @@ import logo from "./logo.png";
 import Axios from "axios";
  
 const Login = () => {
-   const history = useHistory();
+  
   const[data,setData]=useState({
     email:"",
     password:""
