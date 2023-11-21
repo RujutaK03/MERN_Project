@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link,useHistory } from 'react-router-dom'; // Import Link from react-router-dom
 import './styles.css'; // Assuming you have a styles.css file for your styles
 import logo from "./logo.png";
 import Axios from "axios";
+ 
 const Login = () => {
+   const history = useHistory();
   const[data,setData]=useState({
     email:"",
     password:""
@@ -28,6 +30,7 @@ const Login = () => {
           if(response.data.status==200){
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
               document.getElementById("userexists").innerHTML="";
+            history.push('/');
           }
           else{
               document.getElementById("userexists").innerHTML=response.data.message;
