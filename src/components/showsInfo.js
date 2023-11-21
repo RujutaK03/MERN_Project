@@ -36,28 +36,29 @@ const ShowInfo = () => {
     }, [movieId, theatreId]);
 
     return (
-        <div>
+        <div class="bg-black">
             <Header />
 
             {data ? (
                 <>
                     {shows.map((show, idx) => (
                         <div key={idx}>
-                            <h5> Ticket Price Per Person : Rs. {show.ticketPrice} </h5>
+                            <h5 class="text-white"> Ticket Price Per Person : Rs. {show.ticketPrice} </h5>
                             {
                                 show.showTimes.map((showTime, index) => (
                                     <div key={index}>
-                                        <h6>{showTime}</h6>
+                                        <h6 class="text-white">{showTime}</h6>
                                     </div>
                                 ))
                             }
                         </div>
                     ))}
                 </>
-            ) : (<p> No Shows Available </p>)}
+            ) : (<p class="text-white m-2 h2 text-center"> No Shows Available </p>)}
 
             <Footer />
         </div>
+
     )
 
 }
