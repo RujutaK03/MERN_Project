@@ -93,9 +93,7 @@ const Info = () => {
               handleClose={handleClose}
               movieId={movieId}
             />
-            <button className="hpbt my-2 rounded" onClick={handleShow1}>
-              <h2 className="sign">View Ratings</h2>
-            </button>
+            
             <Ratings showModal={showModal1} handleClose={handleClose1} />
             <br />
             <br />
