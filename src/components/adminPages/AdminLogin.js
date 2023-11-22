@@ -9,23 +9,13 @@ const AdminLogin = ({ handleLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const adminData = { email: username, password: password };
-
-    axios.post('https://mern-project-deployment-1.onrender.com/admin-login', adminData)
-      .then((response) => {
-        if (response.status === 200) {
-          alert("Login Successful");
+    if (username=='admin' && password=='admin123'){
+          alert("succes");
           const path = '/AdminHome'; // Replace this with your desired path
           window.location.href = path;
         } else {
-          alert(response.data);
+          alert('error);
         }
-      })
-      .catch((error) => {
-        console.log(error);
-        // Handle the error here, e.g., show an error message to the user
-        alert("An error occurred. Please try again later.");
-      });
   };
 
   return (
