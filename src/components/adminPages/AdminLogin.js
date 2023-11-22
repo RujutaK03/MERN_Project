@@ -9,16 +9,23 @@ const AdminLogin = ({ handleLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add authentication logic here (e.g., validate credentials)
-    // For simplicity, let's assume the credentials are 'admin/admin123'
-    if (username === 'admin' && password === 'admin123') {
-      
-      // Redirect to another page (e.g., Dashboard) after successful login
-      const path = '/AdminHome'; // Replace this with your desired path
-    window.location.href = path;
-    } else {
-      alert('Invalid username or password');
-    }
+    const adminData = { email: username, password: password };
+
+    axios.post('https://mern-project-deployment-1.onrender.com/admin-login', adminData)
+      .then((response) => {
+        if (response.status === 200) {
+          alert("Login Successful");
+          const path = '/AdminHome'; // Replace this with your desired path
+          window.location.href = path;
+        } else {
+          alert(response.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        // Handle the error here, e.g., show an error message to the user
+        alert("An error occurred. Please try again later.");
+      });
   };
 
   return (
