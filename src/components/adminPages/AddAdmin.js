@@ -1,31 +1,48 @@
-// AddAdmin.js
 import React, { useState } from 'react';
 
-const AddAdmin = ({ handleAddAdmin }) => {
-  const [newAdminUsername, setNewAdminUsername] = useState('');
-  const [newAdminPassword, setNewAdminPassword] = useState('');
+const AddAdmin = () => {
+  const [formData, setFormData] = useState({ username: '', password: '' });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add logic to validate and add a new admin
-    handleAddAdmin({
-      username: newAdminUsername,
-      password: newAdminPassword,
-    });
-    setNewAdminUsername('');
-    setNewAdminPassword('');
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleAddAdmin = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:8080/add-admin-user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.status === 200) {
+        alert('New Admin User Added Successfully!');
+      } else if (response.status === 400) {
+        alert('Email is already registered. Use a different email.');
+      } else {
+        console.error('Failed to add a new admin user');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
     <div>
       <h2>Add Admin</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleAddAdmin}>
         <label>
           New Admin Username:
           <input
             type="text"
-            value={newAdminUsername}
-            onChange={(e) => setNewAdminUsername(e.target.value)}
+            name="username"
+            value={formData.username}
+            onChange={handleInputChange}
           />
         </label>
         <br />
@@ -33,8 +50,9 @@ const AddAdmin = ({ handleAddAdmin }) => {
           New Admin Password:
           <input
             type="password"
-            value={newAdminPassword}
-            onChange={(e) => setNewAdminPassword(e.target.value)}
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
           />
         </label>
         <br />
@@ -45,3 +63,4 @@ const AddAdmin = ({ handleAddAdmin }) => {
 };
 
 export default AddAdmin;
+
