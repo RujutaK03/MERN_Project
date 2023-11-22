@@ -66,7 +66,12 @@ const Header = () => {
         )}
       </header>
       <div className="topnav position-static">
-        {/* Other navigation links */}
+         <a href='/' className="links">Home</a>
+        <a href="/movies" className="links">Movies</a>
+
+
+        <a href='/about' className="links">About</a>
+        <a href='/contact' className="links">Contact Us</a>
         <input className="search" type="text" placeholder="Search movies, cinemas.." />
       </div>
     </div>
