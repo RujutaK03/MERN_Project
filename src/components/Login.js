@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom'; // Import Link and useHistory from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useHistory from react-router-dom
 
 import logo from "./logo.png";
 import Axios from "axios";
 
 const Login = () => {
-  const history = useHistory(); // Initialize the useHistory hook
+  const navigate = useNavigate(); // Initialize the useHistory hook
 
   const [data, setData] = useState({
     email: "",
@@ -31,7 +31,7 @@ const Login = () => {
       console.log("This is the response");
       console.log(response.data.message);
       if (response.data.status === 200) {
-        history.push("/"); // Use history.push to navigate to the home page
+        navigate("/");
         document.getElementById("userdoesnotexist").innerHTML = response.data.message;
         document.getElementById("userexists").innerHTML = "";
       } else {
