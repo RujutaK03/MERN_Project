@@ -9,7 +9,17 @@ import MyModal from './MyModal.js';
 
 const Movies = () => {
   const [showModal, setShowModal] = useState(false);
-  const handleShow = () => setShowModal(true);
+  const [movieId, setMovieId] = useState('');
+  
+  const handleShow = (id) => {
+    setShowModal(true);
+    if (!movieId){
+      setMovieId(id);
+    } else {
+      setMovieId('');
+    }
+  };
+  
   const handleClose = () => setShowModal(false);
 
   const [data, setData] = useState([]);
@@ -40,11 +50,11 @@ const Movies = () => {
                     View Info
                   </button></Link>
                 <Link to="#">
-                  <button className="align-items-right hpbt rounded" onClick={handleShow}>
+                  <button className="align-items-right hpbt rounded" onClick={() => handleShow(movie._id)}>
                     Book Tickets
                   </button>
                 </Link>
-                <MyModal showModal={showModal} handleClose={handleClose} movieId={movie._id} />
+                <MyModal showModal={showModal} handleClose={handleClose} movieId={movieId} />
 
               </div>
             </div>
