@@ -59,8 +59,10 @@ const Header = () => {
           </div>
         ) : (
           // Render login button if the user is not logged in
-          <button className="signin" type="button" onClick={handleLogin}>
-            <h2 className="sign">Login</h2>
+          <Link to="/signup" className="signin">
+            <h2 className="sign">Signup</h2>
+            <FontAwesomeIcon icon={faUser} className="usericon" />
+          </Link>
             <FontAwesomeIcon icon={faUser} className="usericon" />
           </button>
         )}
