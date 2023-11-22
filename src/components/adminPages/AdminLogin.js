@@ -1,29 +1,36 @@
-// AdminLogin.js
 import React, { useState } from 'react';
+import Axios from 'axios';
 import AddAdmin from './AddAdmin';
 
 const AdminLogin = ({ handleLogin }) => {
-  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showAddAdmin, setShowAddAdmin] = useState(false);
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add authentication logic here (e.g., validate credentials)
-    // For simplicity, let's assume the credentials are 'admin/admin123'
-    if (username === 'admin' && password === 'admin123') {
-      
-      // Redirect to another page (e.g., Dashboard) after successful login
-      const path = '/AddMovie'; // Replace this with your desired path
-    window.location.href = path;
-    } else {
-      alert('Invalid username or password');
+
+    try {
+      const adminData = { email: username, password: password };
+
+      const response = await Axios.post('https://mern-project-deployment-1.onrender.com/admin-login', adminData);
+
+      if (response.status === 200) {
+        // Redirect to another page after successful login
+        const path = '/AddMovie'; // Replace this with your desired path
+        window.location.href = path;
+      } else {
+        alert('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again later.');
     }
   };
+
   const handleAddAdmin = () => {
     setShowAddAdmin(true);
   };
-
 
   return (
     <div>
