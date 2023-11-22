@@ -49,11 +49,20 @@ const DisplayMovie = () => {
                     ))}
                     </div>
 
+                    <div class="row">
+                    <div class="col-7">
                     <p class="text-white">  Languages : </p>
                     <div class="d-flex">
                     {movie.language.map((l, id) => (
                         <div key={id}><p class="text-white">{l}&ensp;&ensp;</p></div>
                     ))}
+                    </div> 
+                    </div>
+                    <div class="col-5 my-3 d-flex justify-content-end">
+                        <button class="movb rounded">Edit Movie</button>&ensp;&ensp;
+                        <button class="movb mx-2 rounded">Delete Movie</button>
+                    </div>
+                    
                     </div>
                 </div>
                 </div>
