@@ -12,7 +12,7 @@ const AddAdmin = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8080/add-admin-user', {
+      const response = await fetch('https://mern-project-deployment-1.onrender.com/add-admin-user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
