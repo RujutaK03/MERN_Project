@@ -266,3 +266,7 @@ table.tab{
    background-color: #1f2833;
    transition-duration: 0.3s;
 }
+.links1{
+   text-decoration: none;
+   color: #66fcf1;
+}
