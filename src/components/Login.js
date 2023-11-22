@@ -21,23 +21,24 @@ const Login = () => {
  
   const handleRedirect = () => {
     // Programmatically click the Link to navigate to the home page
-    document.getElementById('redirectLink').click();
+   window.location.href = '/';
   };
   const handleSubmit=(e)=>{
       e.preventDefault();
       const userData={
           email:data.email,
           password:data.password
+       
       };
       Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login",userData).then((response)=>{
           console.log("This is the response");
           console.log(response.data.message);
           if(response.data.status==200){
-             
+             handleRedirect();
    
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
               document.getElementById("userexists").innerHTML="";
-               handleRedirect();
+  
           }
           else{
               document.getElementById("userexists").innerHTML=response.data.message;
@@ -65,7 +66,7 @@ const Login = () => {
             <p id="userexists" className='text-success'></p>
           </div>
           <button type="submit">Login</button>
-   <Link to="/" id="redirectLink" style={{ display: 'none' }}>Login</Link>
+   
 
           <br />
           
