@@ -64,11 +64,11 @@ const Login = () => {
             <p id="userdoesnotexist" className='text-danger'></p>
             <p id="userexists" className='text-success'></p>
           </div>
-          <button type="submit" onClick={handleRedirect}>Login</button>
+          <button type="submit">Login</button>
           <br />
           
         </form>
-      
+      <Link to="/" id="redirectLink" style={{ display: 'none' }}>Login</Link>
         
         <div className="text-center">
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
