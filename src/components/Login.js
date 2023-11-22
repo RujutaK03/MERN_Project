@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'; // Import Link and useHistory from react-router-dom
-import './styles.css'; // Assuming you have a styles.css file for your styles
+
 import logo from "./logo.png";
 import Axios from "axios";
 
