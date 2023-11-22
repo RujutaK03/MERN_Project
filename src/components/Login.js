@@ -65,10 +65,12 @@ const Login = () => {
             <p id="userexists" className='text-success'></p>
           </div>
           <button type="submit">Login</button>
+   <Link to="/" id="redirectLink" style={{ display: 'none' }}>Login</Link>
+
           <br />
           
         </form>
-      <Link to="/" id="redirectLink" style={{ display: 'none' }}>Login</Link>
+   
         
         <div className="text-center">
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
