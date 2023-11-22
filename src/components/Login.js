@@ -1,50 +1,44 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useHistory } from 'react-router-dom'; // Import Link and useHistory from react-router-dom
 import './styles.css'; // Assuming you have a styles.css file for your styles
 import logo from "./logo.png";
 import Axios from "axios";
- 
+
 const Login = () => {
-  
-  const[data,setData]=useState({
-    email:"",
-    password:""
+  const history = useHistory(); // Initialize the useHistory hook
+
+  const [data, setData] = useState({
+    email: "",
+    password: ""
   });
-  const handleChange=(e)=>{
-      const value=e.target.value;
-      setData({
-          ...data,
-          [e.target.name]:value
-      });
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value
+    });
   };
- 
-  const handleRedirect = () => {
-    // Programmatically click the Link to navigate to the home page
-   window.location.href = "/";
-  };
-  const handleSubmit=(e)=>{
-      e.preventDefault();
-      const userData={
-          email:data.email,
-          password:data.password
-       
-      };
-      Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login",userData).then((response)=>{
-          console.log("This is the response");
-          console.log(response.data.message);
-          if(response.data.status===200){
-             handleRedirect();
-   
-              document.getElementById("userdoesnotexist").innerHTML=response.data.message;
-              document.getElementById("userexists").innerHTML="";
-  
-          }
-          else{
-              document.getElementById("userexists").innerHTML=response.data.message;
-              document.getElementById("userdoesnotexist").innerHTML="";
-          }
-      });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      email: data.email,
+      password: data.password
+    };
+    Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login", userData).then((response) => {
+      console.log("This is the response");
+      console.log(response.data.message);
+      if (response.data.status === 200) {
+        history.push("/"); // Use history.push to navigate to the home page
+        document.getElementById("userdoesnotexist").innerHTML = response.data.message;
+        document.getElementById("userexists").innerHTML = "";
+      } else {
+        document.getElementById("userexists").innerHTML = response.data.message;
+        document.getElementById("userdoesnotexist").innerHTML = "";
+      }
+    });
   };
 
   return (
@@ -66,13 +60,11 @@ const Login = () => {
             <p id="userexists" className='text-success'></p>
           </div>
           <button type="submit">Login</button>
-   
 
           <br />
-          
+
         </form>
-   
-        
+
         <div className="text-center">
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
           {/* The Link component is used to navigate to the /signup route */}
