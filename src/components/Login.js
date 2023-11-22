@@ -33,7 +33,7 @@ const Login = () => {
       Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login",userData).then((response)=>{
           console.log("This is the response");
           console.log(response.data.message);
-          if(response.data.status==200){
+          if(response.data.status===200){
              handleRedirect();
    
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
