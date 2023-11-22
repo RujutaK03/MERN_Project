@@ -14,7 +14,7 @@ const AdminLogin = ({ handleLogin }) => {
     if (username === 'admin' && password === 'admin123') {
       
       // Redirect to another page (e.g., Dashboard) after successful login
-      const path = '/AddMovie'; // Replace this with your desired path
+      const path = '/AdminHome'; // Replace this with your desired path
     window.location.href = path;
     } else {
       alert('Invalid username or password');
