@@ -72,7 +72,6 @@ const DisplayMovie = () => {
                     </div> 
                     </div>
                     <div class="col-5 my-3 d-flex justify-content-end">
-                        // <button class="movb rounded">Edit Movie</button>&ensp;&ensp;
                         <button class="movb mx-2 rounded" onClick={() => handleDelete(movie._id)}>Delete Movie</button>
                     </div>
                     
