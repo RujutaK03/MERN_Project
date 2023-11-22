@@ -19,6 +19,7 @@ import TheatreInfo from './components/theatreInfo';
 import ShowInfo from './components/showsInfo';
 import MovieSeatSelection from './components/seating';
 import AdminLogin from'./components/adminPages/AdminLogin';
+import AdminHome from './components/adminPages/adminHome';
 // index.js or App.js
 //import { library } from '@fortawesome/fontawesome-svg-core';
 //import { faInstagram, faFacebook, faYoutube, faTwitter, faAppStore, faGooglePlay, faCcPaypal, faGooglePay, faApplePay, faAmazonPay, faPaypal } from '@fortawesome/free-brands-svg-icons';
@@ -50,6 +51,7 @@ function App() {
           <Route path="/DisplayMovie" element={<DisplayMovie />} />
           <Route path="/DisplayTheatre" element={<DisplayTheatre />} />
           <Route path="/admin-login" element={<AdminLogin/>}/>
+          <Route path="/AdminHome" element={<AdminHome />} />
           <Route path="/Seat" element={<MovieSeatSelection />} />
           <Route path="/" element={<Index />} />
         </Routes>
