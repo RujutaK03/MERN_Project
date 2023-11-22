@@ -21,7 +21,7 @@ const Login = () => {
  
   const handleRedirect = () => {
     // Programmatically click the Link to navigate to the home page
-   window.location.href = '/';
+   window.location.href = "/";
   };
   const handleSubmit=(e)=>{
       e.preventDefault();
