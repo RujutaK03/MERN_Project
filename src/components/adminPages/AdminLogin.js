@@ -9,13 +9,7 @@ const AdminLogin = ({ handleLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username=='admin' && password=='admin123'){
-          alert("succes");
-          const path = '/AdminHome'; // Replace this with your desired path
-          window.location.href = path;
-        } else {
-          alert('error);
-        }
+    
   };
 
   return (
