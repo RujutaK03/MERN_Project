@@ -28,11 +28,11 @@ const Login = () => {
           console.log("This is the response");
           console.log(response.data.message);
           if(response.data.status==200){
-            const path ="/"; 
-    window.location.href = path
+             
+   
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
               document.getElementById("userexists").innerHTML="";
-            
+             window.location.href ="/";
           }
           else{
               document.getElementById("userexists").innerHTML=response.data.message;
