@@ -18,6 +18,11 @@ const Login = () => {
           [e.target.name]:value
       });
   };
+ 
+  const handleRedirect = () => {
+    // Programmatically click the Link to navigate to the home page
+    document.getElementById('redirectLink').click();
+  };
   const handleSubmit=(e)=>{
       e.preventDefault();
       const userData={
@@ -32,7 +37,7 @@ const Login = () => {
    
               document.getElementById("userdoesnotexist").innerHTML=response.data.message;
               document.getElementById("userexists").innerHTML="";
-             window.location.href ="/";
+               handleRedirect();
           }
           else{
               document.getElementById("userexists").innerHTML=response.data.message;
@@ -63,6 +68,7 @@ const Login = () => {
           <br />
           
         </form>
+      <Link to="/" id="redirectLink" style={{ display: 'none' }}></Link>
         
         <div className="text-center">
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
