@@ -17,8 +17,21 @@ const DisplayMovie = () => {
             .catch((err) => { console.log(err); })
     }, []);
 
-    // const filenames = photos.map(photo => photo.filename);
-    console.log(data);
+    const handleDelete = (movieId) => {
+        try {
+            axios.delete(`https://mern-project-deployment-1.onrender.com/delete-movie/${movieId}`)
+                .then((res) => {
+                    if (res.status === 200) {
+                        alert(res.data);
+                    } else {
+                        alert("Error. Try again later");
+                    }
+                })
+        } catch (error) {
+            console.log(error);
+            alert("Error. Try again later");
+        }
+    };
 
     return (
        <div class="bg-black">
@@ -59,8 +72,8 @@ const DisplayMovie = () => {
                     </div> 
                     </div>
                     <div class="col-5 my-3 d-flex justify-content-end">
-                        <button class="movb rounded">Edit Movie</button>&ensp;&ensp;
-                        <button class="movb mx-2 rounded">Delete Movie</button>
+                        // <button class="movb rounded">Edit Movie</button>&ensp;&ensp;
+                        <button class="movb mx-2 rounded" onClick={() => handleDelete(movie._id)}>Delete Movie</button>
                     </div>
                     
                     </div>
