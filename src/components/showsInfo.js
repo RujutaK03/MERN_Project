@@ -24,7 +24,7 @@ const ShowInfo = () => {
             params: { movieId: movieId, theatreId: theatreId }
         })
             .then((res) => {
-                if (res.status === 200) {
+                if (res.data && res.data.length > 0) {
                     setShows(res.data);
                     setData(true);
                 } else {
@@ -58,7 +58,8 @@ const ShowInfo = () => {
                         </div>
                     ))}
                 </>
-            ) : (<p class="text-white m-2 h2 text-center"> No Shows Available </p>)}
+            ) : (<>
+                <div class="text-white m-2 h2 text-center"> No Shows Available </div></>)}
                         <Footer />
         </div>
     )
