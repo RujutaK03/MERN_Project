@@ -39,11 +39,12 @@ const ShowInfo = () => {
     return (
         <div class="bg-black">
             <Header />
-            <h1 class="mov container my-3">Available Shows</h1>
+            
             {data ? (
                 <>
                     {shows.map((show, idx) => (
                         <div key={idx} class="my-3 container">
+                            <h1 class="mov container my-3">Available Shows</h1>
                             <h5 class="text-white"> Ticket Price Per Person : Rs. {show.ticketPrice} </h5>
                             <div class="d-flex">
                             {
