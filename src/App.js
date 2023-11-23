@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
-//import Index from './components/Index';
+import Index from './components/Index';
 import Info from './components/Info';
 import MyModal from './components/MyModal';
 import MoviePage from './components/moviespage';
@@ -37,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/index" element={<Index />}/>
           <Route path="/info/:movieId" element={<Info />} />
           <Route path="/citydate" element={<MyModal />} />
           <Route path="/ratings" element={<Ratings />} />
