@@ -16,6 +16,7 @@ const TheatreInfo = () => {
     const movieId = searchParams.get('movieId');
     const city = searchParams.get('city');
     const date = searchParams.get('date');
+    const email=searchParams.get('email');
 
     const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ const TheatreInfo = () => {
     }, []);
 
     const handleClick = (movieId, theatreId, date) => {
-        navigate(`/shows?movieId=${movieId}&theatreId=${theatreId}&date=${date}`)
+        navigate(`/shows?movieId=${movieId}&theatreId=${theatreId}&date=${date}&email=${email}`)
     }
 
     return (

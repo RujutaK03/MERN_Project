@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams,useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './style1.css';
 import Header from './header';
 import Footer from './footer';
 import { Link } from 'react-router-dom';
+import MovieSeatSelection from './seating'
+
 
 const ShowInfo = () => {
     const [shows, setShows] = useState([{
@@ -17,8 +19,9 @@ const ShowInfo = () => {
     const [searchParams] = useSearchParams();
     const movieId = searchParams.get("movieId");
     const theatreId = searchParams.get("theatreId");
-    const date = searchParams.get("date")
-
+    const date = searchParams.get("date");
+    const email=searchParams.get('email');
+    const navigate = useNavigate();
     useEffect(() => {
         axios.get("https://mern-project-deployment-1.onrender.com/get-shows", {
             params: { movieId: movieId, theatreId: theatreId }
@@ -35,6 +38,10 @@ const ShowInfo = () => {
                 console.log(error); setData(false);
             })
     }, [movieId, theatreId]);
+
+    const handleClick = (movieId, theatreId, showTime,email,date) => {
+        navigate(`/Seat?movieId=${movieId}&theatreId=${theatreId}&showTime=${showTime}&email=${email}&date=${date}`)
+    }
     
     return (
         <div class="bg-black">
@@ -49,8 +56,14 @@ const ShowInfo = () => {
                             <div class="d-flex">
                             {
                                 show.showTimes.map((showTime, index) => (
+                                    
                                     <div key={index} >
-                                        <Link to="/Seat"><button class="border mar my-2 rounded"><b>{showTime}</b></button></Link>
+                                        
+                                        
+                                        <Link
+                                            to={`/Seat?movieId=${movieId}&theatreId=${theatreId}&showTime=${showTime}&email=${email}&date=${date}`}
+                                            ><button class="border mar my-2 rounded" onClick={() => handleClick(movieId, theatreId, showTime,email,date)}><b>{showTime}</b></button>
+                                        </Link>
                                     </div>
                                 ))
                             }
