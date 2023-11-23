@@ -1,0 +1,55 @@
+/* AdminLogin.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:#66FCF1;
+    
+}
+
+
+.admin-login-container {
+    margin: 20px;
+    text-align: left;
+    text-decoration-color: #007bff;
+}
+
+.admin-login-container h2 {
+    color: #66FCF1;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+
+.login-button {
+    background-color: #181a1b;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-admin-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.add-admin-button:hover {
+    background-color: #0c0f13;
+}
