@@ -61,7 +61,7 @@ const ShowInfo = () => {
                                         
                                         
                                         <Link
-                                            to={'/Seat?movidId=${movieId}&&theatreId=${theatreId}&&email=${email}&&date=${date}&&showTime=${showTime}&&price=${show.ticketPrice}'}
+                                            to={`/Seat?movieId=${movieId}&&theatreId=${theatreId}&&email=${email}&&date=${date}&&showTime=${showTime}&&ticketPrice=${show.ticketPrice}`}
                                             ><button class="border mar my-2 rounded" onClick={() => handleClick(movieId, theatreId, showTime, email, date, show.ticketPrice)}><b>{showTime}</b></button>
                                         </Link>
                                     </div>
