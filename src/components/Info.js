@@ -19,8 +19,10 @@ const Info = () => {
     const handleShow1 = () => setShowModal1(true);
     const handleClose1 = () => setShowModal1(false);
 
-    const { movieId ,email} = useSearchParams();
-
+    const [searchParams] = useSearcgParams();
+    const movieId = searchParams.get("movieId");
+    const email = searchParams.get("email");
+    
     const [data, setData] = useState({
         title: "",
         description: "",
