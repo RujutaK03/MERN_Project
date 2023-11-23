@@ -75,10 +75,15 @@ const Header = () => {
           </div>
         ) : (
           // Render login button with Link to the signup page
-          <Link to="/signup" className="signin">
-            <h2 className="sign">Logout</h2>
-            <FontAwesomeIcon icon={faUser} className="usericon" />
-          </Link>
+          // <Link to="/signup" className="signin">
+          //   <h2 className="sign">Logout</h2>
+          //   <FontAwesomeIcon icon={faUser} className="usericon" />
+          // </Link>
+
+          <button className="signin">
+              <Link to="/signup" class="link"><h2 class="sign">Log out</h2></Link>
+              <FontAwesomeIcon icon={faUser} className="usericon" />
+            </button>
         )}
       </header>
       <div className="topnav position-static">
