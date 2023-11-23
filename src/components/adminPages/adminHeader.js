@@ -32,7 +32,7 @@ const AdminHeader = () => {
             <img src={logo} alt="logo" height="60px" width="80px" />
             <h1 className="title">World Of Cinema</h1>
             <button className="signin">
-              <Link to="/signup" class="link"><h2 class="sign">Sign Up</h2></Link>
+              <Link to="/signup" class="link"><h2 class="sign">Log out</h2></Link>
               <FontAwesomeIcon icon={faUser} className="usericon" />
             </button>
           </header>
@@ -43,7 +43,7 @@ const AdminHeader = () => {
             <a  href="/AddTheatre" className="links">Add Theatres</a>
             <a href='/DisplayMovie' className="links">Movies</a>
             <a  href='/DisplayTheatre' className="links">Theatres</a>
-            <input className="search" type="text" placeholder="Search movies, cinemas.." />
+          
           </div>
         </div>
     
