@@ -39,8 +39,8 @@ const ShowInfo = () => {
             })
     }, [movieId, theatreId]);
 
-    const handleClick = (movieId, theatreId, showTime,email,date) => {
-        navigate(`/Seat?movieId=${movieId}&theatreId=${theatreId}&showTime=${showTime}&email=${email}&date=${date}`)
+    const handleClick = (movieId, theatreId, showTime, email, date, price) => {
+        navigate(`/Seat?movieId=${movieId}&theatreId=${theatreId}&showTime=${showTime}&email=${email}&date=${date}&ticketPrice=${price}`)
     }
     
     return (
@@ -61,8 +61,8 @@ const ShowInfo = () => {
                                         
                                         
                                         <Link
-                                            to={`/Seat?movieId=${movieId}&theatreId=${theatreId}&showTime=${showTime}&email=${email}&date=${date}`}
-                                            ><button class="border mar my-2 rounded" onClick={() => handleClick(movieId, theatreId, showTime,email,date)}><b>{showTime}</b></button>
+                                            to={`/Seat?movieId=${movieId}&&theatreId=${theatreId}&&email=${email}&&date=${date}&&showTime=${showTime}&&ticketPrice=${show.ticketPrice}`}
+                                            ><button class="border mar my-2 rounded" onClick={() => handleClick(movieId, theatreId, showTime, email, date, show.ticketPrice)}><b>{showTime}</b></button>
                                         </Link>
                                     </div>
                                 ))

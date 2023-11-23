@@ -18,10 +18,7 @@ const MovieSeatSelection = () => {
   const showTime = searchParams.get('showTime');
   const email = searchParams.get('email');
   const date = searchParams.get('date');
-  console.log(movieId);
-  console.log(theatreId);
-  console.log(showTime);
-  console.log(email);
+  const ticketPrice = searchParams.get('ticketPrice');
   
   const [totalAmount, setTotalAmount] = useState(0);
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -80,7 +77,7 @@ const MovieSeatSelection = () => {
 
   const calculateTotal = () => {
     const selectedSeats = document.querySelectorAll('.selected');
-    const seatPrice = 200;
+    const seatPrice = ticketPrice;
     return selectedSeats.length * seatPrice;
   };
 

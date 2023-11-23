@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import AddAdmin from './AddAdmin';
+import logo from "./logo.png";
 import './AdminLogin.css';
 const AdminLogin = ({ handleLogin }) => {
   const [username, setUsername] = useState('');
@@ -33,28 +34,33 @@ const AdminLogin = ({ handleLogin }) => {
   };
 
   return (
-    <div>
-      <h2>Admin Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Login</button>
+    <div className="container1">
+      <img src={logo} alt="Movie Ticket Booking Logo" className="logo" />
+      <div className="login-box">
+        <h2>Admin Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="email">Username:</label>
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Password:</label>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+
         <button type="button" onClick={handleAddAdmin}>
           Add Admin
         </button>
-      </form>
-      {showAddAdmin && <AddAdmin />}
-    </div>
+
+        {showAddAdmin && <AddAdmin />}
+
+        
+        </div>
+      </div>
+    
   );
 };
-
 export default AdminLogin;
 

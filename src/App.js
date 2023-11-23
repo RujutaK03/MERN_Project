@@ -37,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/index" element={<Index />}/>
           <Route path="/info/:movieId" element={<Info />} />
           <Route path="/citydate" element={<MyModal />} />
           <Route path="/ratings" element={<Ratings />} />
@@ -53,7 +54,7 @@ function App() {
           <Route path="/admin-login" element={<AdminLogin/>}/>
           <Route path="/AdminHome" element={<AdminHome />} />
           <Route path="/Seat" element={<MovieSeatSelection />} />
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Signup />} />
         </Routes>
       </div>
     </Router>
