@@ -20,6 +20,7 @@ const Info = () => {
     const handleClose1 = () => setShowModal1(false);
 
     const { movieId } = useParams();
+    const email = 'rujuta30kulkarni@gmail.com';
 
     const [data, setData] = useState({
         title: "",
@@ -92,6 +93,7 @@ const Info = () => {
               showModal={showModal}
               handleClose={handleClose}
               movieId={movieId}
+              email={email}
             />
             
             <Ratings showModal={showModal1} handleClose={handleClose1} />
