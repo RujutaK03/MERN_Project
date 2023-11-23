@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link component
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -16,6 +16,11 @@ const Header = () => {
 
   // UseNavigate hook to navigate to other pages
   const navigate = useNavigate();
+
+  // useEffect to log the value of isLoggedIn after it changes
+  useEffect(() => {
+    console.log('isLoggedIn updated:', isLoggedIn);
+  }, [isLoggedIn]);
 
   // Dummy function to simulate login. Replace it with your actual login logic.
   const handleLogin = () => {
@@ -34,7 +39,6 @@ const Header = () => {
           document.getElementById("userdoesnotexist").innerHTML = response.data.message;
           document.getElementById("userexists").innerHTML = "";
           setIsLoggedIn(true);
-         console.log('isLoggedIn after login:', isLoggedIn);
         }
       })
       .catch((error) => {
@@ -67,10 +71,8 @@ const Header = () => {
         )}
       </header>
       <div className="topnav position-static">
-       <a href='/' className="links">Home</a>
+        <a href='/' className="links">Home</a>
         <a href="/movies" className="links">Movies</a>
-
-
         <a href='/about' className="links">About</a>
         <a href='/contact' className="links">Contact Us</a>
         {isLoggedIn && <Link to="/" className="links">Profile</Link>}
