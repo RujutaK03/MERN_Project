@@ -57,14 +57,14 @@ const MovieSeatSelection = () => {
         console.log("Entering into axios");
         console.log(response.data.message);
         if(response.data.status==200){
-            document.getElementById("paymentsuccessful").innerHTML=response.data.message;
+            alert(response.data.message);
             //document.getElementById("paymentunsuccessful").innerHTML="";
             Axios.post("https://mern-project-deployment-1.onrender.com/seatRoute/seats-book",bookedData).then((booked)=>{
               console.log(booked.data.message);
             }).catch((err)=>console.log(err));
         }
         else{
-            document.getElementById("paymentunsuccessful").innerHTML=response.data.message;
+            alert(response.data.message);
             //document.getElementById("paymentsuccessful").innerHTML="";
         }
     }).catch((err)=>console.log(err));
