@@ -21,7 +21,9 @@ const Header = () => {
   useEffect(() => {
     console.log('isLoggedIn updated:', isLoggedIn);
   }, [isLoggedIn]);
-
+ const handleClick = (email) => {
+    navigate(`/movies?email=${email}`);
+  };
   // Dummy function to simulate login. Replace it with your actual login logic.
   const handleLogin = () => {
     // Define or get userData from user input
@@ -29,21 +31,30 @@ const Header = () => {
       email: data.email,
       password: data.password,
     };
-
-    Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login", userData)
-      .then((response) => {
-        console.log("This is the response");
-        console.log(response.data.message);
-        if (response.data.status === 200) {
-          navigate("/");
-          document.getElementById("userdoesnotexist").innerHTML = response.data.message;
-          document.getElementById("userexists").innerHTML = "";
-          setIsLoggedIn(true);
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        // Handle the error here, e.g., show an error message to the user
+   Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login",userData).then((response)=>{
+          console.log("This is the response");
+          console.log(response.data.message);
+          if(response.data.status==200){
+             
+              
+              
+              
+   
+              document.getElementById("userdoesnotexist").innerHTML=response.data.message;
+              document.getElementById("userexists").innerHTML="";
+              
+              
+              
+  
+          }
+          else{
+              console.log(data.email);
+              handleClick(data.email);
+              //handleRedirect();
+              document.getElementById("userexists").innerHTML=response.data.message;
+              document.getElementById("userdoesnotexist").innerHTML="";
+          }
+    
       });
   };
 
