@@ -3,21 +3,30 @@ import { Link } from 'react-router-dom';
 import './style1.css'; // Assuming you have a style.css file for your styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 import MyModal from './MyModal.js';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 const Movies = () => {
+  const navigate = useNavigate();
+  const [searchParams]=useSearchParams();
+  const getemail=searchParams.get('email');
+  //console.log(email);
   const [showModal, setShowModal] = useState(false);
   const [movieId, setMovieId] = useState('');
-  
-  const handleShow = (id) => {
+  const [email,setEmail]=useState('');
+  const handleShow = (id,email) => {
     setShowModal(true);
     if (!movieId){
       setMovieId(id);
+      setEmail(email);
+      
     } else {
       setMovieId('');
+
     }
+    
   };
   
   const handleClose = () => setShowModal(false);
@@ -50,11 +59,11 @@ const Movies = () => {
                     View Info
                   </button></Link>
                 <Link to="#">
-                  <button className="align-items-right hpbt rounded" onClick={() => handleShow(movie._id)}>
+                  <button className="align-items-right hpbt rounded" onClick={() => handleShow(movie._id,getemail)}>
                     Book Tickets
                   </button>
                 </Link>
-                <MyModal showModal={showModal} handleClose={handleClose} movieId={movieId} />
+                <MyModal showModal={showModal} handleClose={handleClose} movieId={movieId} email={email}/>
 
               </div>
             </div>
