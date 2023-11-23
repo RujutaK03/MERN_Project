@@ -72,10 +72,11 @@ const Header = () => {
 
         <a href='/about' className="links">About</a>
         <a href='/contact' className="links">Contact Us</a>
-       
+        <input className="search" type="text" placeholder="Search movies, cinemas.." />
       </div>
     </div>
   );
 };
 
 export default Header;
+
