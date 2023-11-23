@@ -21,7 +21,8 @@ const Info = () => {
 
     const [searchParams] = useSearchParams();
     const movieId = searchParams.get("movieId");
-    const email = searchParams.get("email");
+    // const email = searchParams.get("email");
+    const email = 'rujuta30kulkarni@gmail.com'
     
     const [data, setData] = useState({
         title: "",
