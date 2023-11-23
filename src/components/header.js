@@ -34,6 +34,7 @@ const Header = () => {
           document.getElementById("userdoesnotexist").innerHTML = response.data.message;
           document.getElementById("userexists").innerHTML = "";
           setIsLoggedIn(true);
+         console.log('isLoggedIn after login:', isLoggedIn);
         }
       })
       .catch((error) => {
