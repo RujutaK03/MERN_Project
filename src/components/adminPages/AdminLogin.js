@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import AddAdmin from './AddAdmin';
-
+import './AdminLogin.css';
 const AdminLogin = ({ handleLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
