@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,useSearchParams} from 'react-router-dom';
 import './style1.css'; // Assuming you have a style.css file for your styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -19,7 +19,7 @@ const Info = () => {
     const handleShow1 = () => setShowModal1(true);
     const handleClose1 = () => setShowModal1(false);
 
-    const { movieId } = useParams();
+    const { movieId ,email} = useSearchParams();
 
     const [data, setData] = useState({
         title: "",
@@ -34,7 +34,7 @@ const Info = () => {
     });
 
     useEffect(() => {
-        axios.get(`https://mern-project-deployment-1.onrender.com/get-movie-info/${movieId}`)
+        axios.get(`https://mern-project-deployment-1.onrender.com/get-movie-info/${movieId}}`)
             .then((res) => {
                 console.log(res);
                 if (res.status === 200) {
@@ -92,6 +92,7 @@ const Info = () => {
               showModal={showModal}
               handleClose={handleClose}
               movieId={movieId}
+              email={email}
             />
             
             <Ratings showModal={showModal1} handleClose={handleClose1} />
