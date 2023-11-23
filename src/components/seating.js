@@ -26,7 +26,7 @@ const MovieSeatSelection = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [seatBooked, setSeatBooked] = useState([]);
-  Axios.get("https://mern-project-deployment-1.onrender.com/seats-view",{
+  Axios.get("https://mern-project-deployment-1.onrender.com/seatRoute/seats-view",{
       params: {
         movieId: movieId,
         theatreId: theatreId,
