@@ -54,7 +54,7 @@ const Movies = () => {
               <div>
                 <h3 className="mov m-2">{movie.title}</h3>
                 <h5 className="mov m-2 text-white"> {movie.duration.hours} hrs {movie.duration.minutes} mins </h5>
-                <Link to={`/info?movieId=${movie._id}`} className="link ">
+                <Link to={`/info/${movie._id}`} className="link ">
                   <button className=" align-items-right hpbt rounded ">
                     View Info
                   </button></Link>
