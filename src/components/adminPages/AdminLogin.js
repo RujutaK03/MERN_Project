@@ -50,10 +50,6 @@ const AdminLogin = ({ handleLogin }) => {
           <button type="submit">Login</button>
         </form>
 
-        <button type="button" onClick={handleAddAdmin}>
-          Add Admin
-        </button>
-
         {showAddAdmin && <AddAdmin />}
 
         
