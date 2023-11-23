@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Index from './components/Index';
+//import Index from './components/Index';
 import Info from './components/Info';
 import MyModal from './components/MyModal';
 import MoviePage from './components/moviespage';
@@ -53,7 +53,7 @@ function App() {
           <Route path="/admin-login" element={<AdminLogin/>}/>
           <Route path="/AdminHome" element={<AdminHome />} />
           <Route path="/Seat" element={<MovieSeatSelection />} />
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Signup />} />
         </Routes>
       </div>
     </Router>
