@@ -18,7 +18,7 @@ const MovieSeatSelection = () => {
   const showTime = searchParams.get('showTime');
   const email = searchParams.get('email');
   const date = searchParams.get('date');
-  const ticketPrice = searchParams.get('price');
+  const ticketPrice = searchParams.get('ticketPrice');
   
   const [totalAmount, setTotalAmount] = useState(0);
   const [selectedSeats, setSelectedSeats] = useState([]);
