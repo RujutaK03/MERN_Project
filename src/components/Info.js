@@ -20,7 +20,7 @@ const Info = () => {
     const handleClose1 = () => setShowModal1(false);
 
     const [searchParams] = useSearchParams();
-    const movieId = searchParams.get("movieId");
+    const {movieId} = useParams();
     // const email = searchParams.get("email");
     const email = 'rujuta30kulkarni@gmail.com'
     
