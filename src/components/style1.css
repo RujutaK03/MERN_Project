@@ -276,3 +276,9 @@ table.tab{
 .movb:hover{
    background-color: blue;
 }
+.booked {
+   pointer-events:none;
+   opacity:0.5;
+   background-color: grey; /* Set the desired grey color */
+   color: white; /* Set the text color if needed */
+ }
