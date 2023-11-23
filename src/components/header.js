@@ -1,36 +1,81 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './style1.css'; // Assuming you have a style.css file for your styles
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link component
+import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import logo from './logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
+  // State to track the login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // State to store user input for email and password
+  const [data, setData] = useState({ email: '', password: '' });
+
+  // UseNavigate hook to navigate to other pages
+  const navigate = useNavigate();
+
+  // Dummy function to simulate login. Replace it with your actual login logic.
+  const handleLogin = () => {
+    // Define or get userData from user input
+    const userData = {
+      email: data.email,
+      password: data.password,
+    };
+
+    Axios.post("https://mern-project-deployment-1.onrender.com/userRoute/login", userData)
+      .then((response) => {
+        console.log("This is the response");
+        console.log(response.data.message);
+        if (response.data.status === 200) {
+          navigate("/");
+          document.getElementById("userdoesnotexist").innerHTML = response.data.message;
+          document.getElementById("userexists").innerHTML = "";
+          setIsLoggedIn(true);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle the error here, e.g., show an error message to the user
+      });
+  };
+
+  // Dummy function to simulate logout. Replace it with your actual logout logic.
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <div className="header1">
       <header className="header">
         <img src={logo} alt="logo" height="60px" width="80px" />
         <h1 className="title">World Of Cinema</h1>
-        <button className="signin">
-          <Link to="/signup" className="link"><h2 className="sign">Sign Up</h2></Link>
-          <FontAwesomeIcon icon={faUser} className="usericon" />
-        </button>
+        {isLoggedIn ? (
+          // Render logout button if the user is logged in
+          <div className="usericon" onClick={handleLogout}>
+            <FontAwesomeIcon icon={faUser} />
+          </div>
+        ) : (
+          // Render login button with Link to the signup page
+          <Link to="/signup" className="signin">
+            <h2 className="sign">Signup</h2>
+            <FontAwesomeIcon icon={faUser} className="usericon" />
+          </Link>
+        )}
       </header>
       <div className="topnav position-static">
-        <a href='/' className="links">Home</a>
+       <a href='/' className="links">Home</a>
         <a href="/movies" className="links">Movies</a>
 
 
         <a href='/about' className="links">About</a>
         <a href='/contact' className="links">Contact Us</a>
-        <input className="search" type="text" placeholder="Search movies, cinemas.." />
+       
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 export default Header;
