@@ -76,7 +76,7 @@ const Header = () => {
         ) : (
           // Render login button with Link to the signup page
           <Link to="/signup" className="signin">
-            <h2 className="sign">Signup</h2>
+            <h2 className="sign">Logout</h2>
             <FontAwesomeIcon icon={faUser} className="usericon" />
           </Link>
         )}
