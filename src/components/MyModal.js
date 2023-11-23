@@ -5,7 +5,7 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const MyModal = ({ showModal, handleClose, movieId }) => {
+const MyModal = ({ showModal, handleClose, movieId ,email}) => {
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
   const [citiesInIndia, setCities] = useState([]);
@@ -22,7 +22,7 @@ const MyModal = ({ showModal, handleClose, movieId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleClose();
-    navigate(`/theatres?movieId=${movieId}&city=${city}&date=${date}`);
+    navigate(`/theatres?movieId=${movieId}&city=${city}&date=${date}&email=${email}`);
   };
 
   return (
